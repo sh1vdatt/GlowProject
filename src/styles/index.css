@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@100&family=Sacramento&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://befonts.com/marbley-font.html");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Marbley";
+  src: url("../assets/common/font/marbley-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-schibsted: "Schibsted Grotesk", sans-serif;
+  --font-marbley: "Marbley", serif;
+}
+
+body {
+  font-family: var(--font-schibsted);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-marbley);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.body {
+  background-color: #fefcf8;
+}
