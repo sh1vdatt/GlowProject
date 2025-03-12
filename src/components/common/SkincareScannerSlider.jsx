@@ -179,7 +179,7 @@ export function SkincareScannerSlider() {
           </AnimatePresence>
         </div>
       </div>
-      <div className="md:w-1/2">
+      <div className="md:w-1/2 mt-8 ">
         {activeSlide === 0 && (
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -211,7 +211,7 @@ export function SkincareScannerSlider() {
             </p>
           </motion.div>
         </AnimatePresence>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mt-4">
           <SliderNavigation
             activeSlide={activeSlide}
             totalSlides={totalSlides}
