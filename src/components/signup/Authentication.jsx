@@ -2,15 +2,8 @@ import React from "react";
 import { Button } from "../ui/button";
 import { Mail, Apple, Facebook } from "lucide-react";
 import { FaGoogle } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 const Authentication = () => {
-  const navigate = useNavigate();
-
-  const handleAuthSuccess = () => {
-    navigate("/product-choice");
-  };
-
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md bg-yellow-50 flex flex-col min-h-screen mx-auto py-8 px-8">
@@ -32,24 +25,15 @@ const Authentication = () => {
         </div>
 
         <div className="space-y-4 mb-4">
-          <Button
-            className="w-full h-14 rounded-full font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors"
-            onClick={handleAuthSuccess}
-          >
+          <Button className="w-full h-14 rounded-full font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors">
             <Facebook size={20} className="mr-3" /> Continue with Facebook
           </Button>
 
-          <Button
-            className="w-full h-14 rounded-full font-medium bg-gray-200 text-gray-800 border border-gray-300 hover:bg-gray-300 transition-colors"
-            onClick={handleAuthSuccess}
-          >
+          <Button className="w-full h-14 rounded-full font-medium bg-gray-200 text-gray-800 border border-gray-300 hover:bg-gray-300 transition-colors">
             <FaGoogle size={20} className="mr-3" /> Continue with Google
           </Button>
 
-          <Button
-            className="w-full h-14 rounded-full font-medium bg-black text-white hover:bg-gray-900 transition-colors"
-            onClick={handleAuthSuccess}
-          >
+          <Button className="w-full h-14 rounded-full font-medium bg-black text-white hover:bg-gray-900 transition-colors">
             <Apple size={20} className="mr-3" /> Continue with Apple
           </Button>
         </div>
@@ -61,10 +45,7 @@ const Authentication = () => {
         </div>
 
         <div className="mb-28">
-          <Button
-            className="w-full h-14 rounded-full font-medium bg-gray-800 text-white hover:bg-gray-700 transition-colors"
-            onClick={handleAuthSuccess}
-          >
+          <Button className="w-full h-14 rounded-full font-medium bg-gray-800 text-white hover:bg-gray-700 transition-colors">
             <Mail size={20} className="mr-3" /> Continue with Email
           </Button>
         </div>

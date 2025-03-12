@@ -64,7 +64,7 @@ export function Home() {
                 <span className="text-xl">🌐</span>
               </div>
               <button
-                className="px-8 py-3 rounded-full bg-lime-200 text-base"
+                className="px-8 py-3 rounded-full bg-lime-200 text-base hover:bg-lime-300 transition-colors"
                 onClick={handleAuthNavigation}
               >
                 It's Scan-tastic Time
