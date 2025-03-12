@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ProductCarousel } from "../common/ProductCarousel";
 import { SkincareScannerSlider } from "../common/SkincareScannerSlider";
 import { SkinAnalysisSlider } from "../common/SkinAnalysisSlider";
@@ -16,6 +17,12 @@ import { Logo } from "../common/Logo";
 import { DiscoverSection } from "./DiscoverSection";
 
 export function Home() {
+  const navigate = useNavigate();
+
+  const handleAuthNavigation = () => {
+    navigate("/auth");
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +63,10 @@ export function Home() {
               <div className="h-10 w-10 rounded-full border flex items-center justify-center">
                 <span className="text-xl">🌐</span>
               </div>
-              <button className="px-8 py-3 rounded-full bg-lime-200 text-base">
+              <button
+                className="px-8 py-3 rounded-full bg-lime-200 text-base"
+                onClick={handleAuthNavigation}
+              >
                 It's Scan-tastic Time
               </button>
             </div>
@@ -73,7 +83,10 @@ export function Home() {
             Really In Your Products! Are they safe and sound for your skin?
             Let's find out!
           </p>
-          <button className="bg-lime-200 hover:bg-lime-300 transition-colors px-8 py-3 rounded-full text-gray-700 font-medium">
+          <button
+            className="bg-lime-200 hover:bg-lime-300 transition-colors px-8 py-3 rounded-full text-gray-700 font-medium"
+            onClick={handleAuthNavigation}
+          >
             Scan Product Ingredients Now
           </button>
         </section>
