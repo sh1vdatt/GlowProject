@@ -2,12 +2,19 @@ import React from "react";
 import { Button } from "../../../ui/button";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import Logo from "../../../../assets/sections/hero/Logo.png";
+import FacialSkin from "../../../../assets/signup/SkinAnalysis/face.png";
+import BodySkin from "../../../../assets/signup/SkinAnalysis/back.png";
 
 const SkinAreaSelection = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
     navigate(-1);
+  };
+
+  const handleSkinAreaSelect = (skinType) => {
+    navigate(`/get-ready/${skinType}`);
   };
 
   return (
@@ -18,11 +25,7 @@ const SkinAreaSelection = () => {
             <IoIosArrowBack className="h-6 w-6 text-gray-800" />
           </button>
           <div className="mx-auto">
-            <img
-              src="src/assets/sections/hero/Logo.png"
-              alt="Project Glow"
-              className="h-8"
-            />
+            <img src={Logo} alt="Project Glow" className="h-8" />
           </div>
           <div className="w-10"></div>
         </div>
@@ -38,24 +41,22 @@ const SkinAreaSelection = () => {
         </div>
 
         <div className="flex justify-center gap-4 mb-8 mt-[60px]">
-          <Button className="w-[150px] h-40 rounded-xl bg-gray-50 text-gray-800 hover:bg-gray-100 transition-colors border border-gray-200 flex flex-col justify-center items-center">
+          <Button
+            onClick={() => handleSkinAreaSelect("facial")}
+            className="w-[150px] h-40 rounded-xl bg-gray-50 text-gray-800 hover:bg-gray-100 transition-colors border border-gray-200 flex flex-col justify-center items-center"
+          >
             <div className="mb-2">
-              <img
-                src="src/assets/signup/SkinAnalysis/face.png"
-                alt="Facial Skin"
-                className="h-20 w-20"
-              />
+              <img src={FacialSkin} alt="Facial Skin" className="h-20 w-20" />
             </div>
             <span className="text-xl font-semibold">Facial Skin</span>
           </Button>
 
-          <Button className="w-[150px] h-40 rounded-xl bg-gray-50 text-gray-800 hover:bg-gray-100 transition-colors border border-gray-200 flex flex-col justify-center items-center">
+          <Button
+            onClick={() => handleSkinAreaSelect("body")}
+            className="w-[150px] h-40 rounded-xl bg-gray-50 text-gray-800 hover:bg-gray-100 transition-colors border border-gray-200 flex flex-col justify-center items-center"
+          >
             <div className="mb-2">
-              <img
-                src="src/assets/signup/SkinAnalysis/back.png"
-                alt="Body Skin"
-                className="h-20 w-20"
-              />
+              <img src={BodySkin} alt="Body Skin" className="h-20 w-20" />
             </div>
             <span className="text-xl font-semibold">Body Skin</span>
           </Button>

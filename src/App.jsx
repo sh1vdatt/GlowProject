@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Authentication from "./components/signup/Authentication";
 import ProductSelection from "./components/signup/ProductChoice";
 import SkinAreaSelection from "./components/signup/product/skinAnalysis/SkinAreaSelection";
+import GetReadyScreen from "./components/signup/product/skinAnalysis/GetReady";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/auth" element={<Authentication />} />
         <Route path="/product-choice" element={<ProductSelection />} />
         <Route path="/skin-area-selection" element={<SkinAreaSelection />} />
+        <Route path="/get-ready/:skinType" element={<GetReadyScreen />} />
       </Routes>
     </BrowserRouter>
   );
