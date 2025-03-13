@@ -1,7 +1,14 @@
 import React from "react";
 import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 const ProductSelection = () => {
+  const navigate = useNavigate();
+
+  const handleSkinAnalysis = () => {
+    navigate("/skin-area-selection");
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md bg-yellow-50 flex flex-col min-h-screen mx-auto py-8 px-8">
@@ -20,13 +27,16 @@ const ProductSelection = () => {
         </div>
 
         <div className="space-y-6 mb-8 flex flex-col items-center">
-          <Button className="w-[289px] h-24 rounded-xl font-medium bg-lime-200 text-gray-800 hover:bg-lime-300 transition-colors flex flex-col">
+          <Button
+            className="w-[289px] h-24 rounded-xl font-medium bg-lime-200 text-gray-800 hover:bg-lime-300 transition-colors flex flex-col"
+            onClick={handleSkinAnalysis}
+          >
             <span className="text-xl font-semibold mb-1">Skin Analysis</span>
             <span className="text-sm">Your skin secrets revealed.</span>
             <span className="text-sm">Just a click!</span>
           </Button>
 
-          <Button className="w-[289px] h-24 rounded-xl font-medium bg-sky-200 text-gray-800 hover:bg-blue-300 transition-colors flex flex-col border-2 border-blue-400">
+          <Button className="w-[289px] h-24 rounded-xl font-medium bg-sky-200 text-gray-800 hover:bg-blue-300 transition-colors flex flex-col">
             <span className="text-xl font-semibold mb-1">Product Analysis</span>
             <span className="text-sm">Product promise vs. reality?</span>
             <span className="text-sm">One scan tells all!</span>
