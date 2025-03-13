@@ -50,7 +50,7 @@ const IngredientPreferencesForm = () => {
   };
 
   const handleContinue = () => {
-    navigate(`/skin-analysis-results/${skinType}`, {
+    navigate(`/prescribed-skincare/${skinType}`, {
       state: {
         ...userDetails,
         ingredientPreferences: selectedPreferences,
@@ -122,7 +122,7 @@ const IngredientPreferencesForm = () => {
                       placeholder="Please specify"
                       value={specificIngredients}
                       onChange={(e) => setSpecificIngredients(e.target.value)}
-                      className="w-full p-3 border border-gray-300 rounded-md bg-white"
+                      className="w-full p-3 border border-gray-300 rounded-xl bg-white"
                     />
                   </div>
                 )}

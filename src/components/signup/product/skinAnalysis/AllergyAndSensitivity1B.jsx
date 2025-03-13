@@ -121,7 +121,7 @@ const AllergiesSelection = () => {
                       placeholder="Please specify"
                       value={otherSpecified}
                       onChange={(e) => setOtherSpecified(e.target.value)}
-                      className="w-full p-3 border border-gray-300 rounded-md bg-white"
+                      className="w-full p-3 border border-gray-300 rounded-xl bg-white"
                     />
                   </div>
                 )}
@@ -131,7 +131,7 @@ const AllergiesSelection = () => {
 
         <div className="mt-auto pt-4">
           <Button
-            className={`w-full h-12 rounded-md font-medium ${
+            className={`w-full h-12 rounded-xl font-medium ${
               selectedAllergies.length > 0
                 ? "bg-lime-200 hover:bg-lime-300"
                 : "bg-gray-200"

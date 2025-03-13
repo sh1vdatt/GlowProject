@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { Button } from "../../../ui/button";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import Logo from "../../../../assets/sections/hero/Logo.png";
-import Allergies from "../../../../assets/signup/SkinAnalysis/allergies1.png";
+import prescribtion from "../../../../assets/signup/SkinAnalysis/prescribtion.png";
 
-const AllergiesQuestion = () => {
+const PrescribedSkincareQuestion = () => {
   const navigate = useNavigate();
   const { skinType } = useParams();
   const location = useLocation();
   const userDetails = location.state;
   const [selectedOption, setSelectedOption] = useState(null);
+  const [specification, setSpecification] = useState("");
 
   const handleBack = () => {
     navigate(-1);
@@ -18,10 +19,11 @@ const AllergiesQuestion = () => {
 
   const handleContinue = () => {
     if (selectedOption !== null) {
-      navigate(`/allergies-selection/${skinType}`, {
+      navigate(`/next-step/${skinType}`, {
         state: {
           ...userDetails,
-          hasAllergies: selectedOption,
+          usingPrescribedSkincare: selectedOption,
+          prescribedSkincareDetails: specification,
         },
       });
     }
@@ -37,6 +39,7 @@ const AllergiesQuestion = () => {
           <div className="mx-auto">
             <img src={Logo} alt="Project Glow" className="h-8" />
           </div>
+          <div className="w-10"></div>
         </div>
 
         <div className="flex justify-center gap-2 mb-8">
@@ -46,7 +49,7 @@ const AllergiesQuestion = () => {
           <div className="w-8 h-8 rounded-full bg-lime-200 flex items-center justify-center">
             2
           </div>
-          <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-full bg-lime-200 flex items-center justify-center">
             3
           </div>
         </div>
@@ -54,10 +57,11 @@ const AllergiesQuestion = () => {
         <div className="mb-8">
           <div className="flex items-start gap-4">
             <div className="flex items-center justify-center mr-4">
-              <img src={Allergies} alt="allergy Icon" />
+              <img src={prescribtion} alt="Skin Condition Icon" />
             </div>
             <h2 className="text-xl font-medium text-gray-800">
-              Do you have any known allergies to skincare ingredients?
+              Are you currently using any prescribed or medicated skincare
+              products?
             </h2>
           </div>
         </div>
@@ -67,7 +71,7 @@ const AllergiesQuestion = () => {
             className={`w-full py-4 rounded-full text-center transition ${
               selectedOption === "yes"
                 ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                : "bg-white text-gray-800 hover:bg-gray-100 border border-gray-300"
             }`}
             onClick={() => setSelectedOption("yes")}
           >
@@ -78,28 +82,30 @@ const AllergiesQuestion = () => {
             className={`w-full py-4 rounded-full text-center transition ${
               selectedOption === "no"
                 ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                : "bg-white text-gray-800 hover:bg-gray-100 border border-gray-300"
             }`}
             onClick={() => setSelectedOption("no")}
           >
             No
           </Button>
 
-          <Button
-            className={`w-full py-4 rounded-full text-center transition ${
-              selectedOption === "unknown"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-            }`}
-            onClick={() => setSelectedOption("unknown")}
-          >
-            I don't know
-          </Button>
+          <div className="mt-6">
+            <p className="text-gray-700 mb-2">
+              Please specify if comfortable (Optional)
+            </p>
+            <input
+              type="text"
+              placeholder="Specify here"
+              className="w-full p-4 border border-gray-300 rounded-xl bg-white"
+              value={specification}
+              onChange={(e) => setSpecification(e.target.value)}
+            />
+          </div>
         </div>
 
         <div className="mt-auto">
           <Button
-            className={`w-full py-4 rounded-xl ${
+            className={`w-full py-4 rounded-lg ${
               selectedOption === null
                 ? "bg-gray-200"
                 : "bg-lime-200 hover:bg-lime-300"
@@ -115,4 +121,4 @@ const AllergiesQuestion = () => {
   );
 };
 
-export default AllergiesQuestion;
+export default PrescribedSkincareQuestion;

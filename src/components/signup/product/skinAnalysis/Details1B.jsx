@@ -132,7 +132,7 @@ const SkinTypeSelection = () => {
               selectedSkinType && selectedSensitivity
                 ? "bg-lime-200 hover:bg-lime-300"
                 : "bg-gray-200"
-            } text-gray-800 rounded-lg font-medium text-lg`}
+            } text-gray-800 rounded-xl font-medium text-lg`}
           >
             Continue
           </Button>

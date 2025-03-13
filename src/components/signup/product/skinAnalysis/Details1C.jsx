@@ -149,7 +149,7 @@ const SkinGoalsSelection = () => {
               selectedGoals.length > 0
                 ? "bg-lime-300 hover:bg-lime-400"
                 : "bg-gray-200"
-            } text-gray-800 font-medium py-3 rounded-md`}
+            } text-gray-800 font-medium py-3 rounded-xl`}
             onClick={handleContinue}
             disabled={selectedGoals.length === 0}
           >

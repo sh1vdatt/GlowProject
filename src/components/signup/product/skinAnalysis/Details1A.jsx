@@ -183,7 +183,7 @@ const UserProfileForm = () => {
 
         <Button
           onClick={handleContinue}
-          className="w-full py-4 bg-lime-200 text-gray-800 rounded-full hover:bg-lime-300 transition-colors text-lg font-medium"
+          className="w-full py-4 bg-lime-200 text-gray-800 rounded-xl hover:bg-lime-300 transition-colors text-lg font-medium"
         >
           Continue
         </Button>
