@@ -3,6 +3,7 @@ import { Button } from "../../../ui/button";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import Logo from "../../../../assets/sections/hero/Logo.png";
+import SkinType from "../../../../assets/signup/SkinAnalysis/SkinType.png";
 
 const SkinTypeSelection = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const SkinTypeSelection = () => {
   };
 
   const handleContinue = () => {
-    navigate(`/next-step/${skinType}`, {
+    navigate(`/skin-goals/${skinType}`, {
       state: {
         ...userDetails,
         skinType: selectedSkinType,
@@ -55,24 +56,15 @@ const SkinTypeSelection = () => {
           </div>
         </div>
 
-        <div className="flex items-center mb-8">
-          <div className="mr-4">
-            <div className="w-16 h-16 rounded-full border-2 border-gray-800 flex items-center justify-center">
-              <div className="flex flex-col items-center">
-                <div className="flex space-x-1">
-                  {[1, 2, 3].map((_, index) => (
-                    <div
-                      key={index}
-                      className="w-1 h-6 border-r-2 border-gray-800 rounded-full"
-                    ></div>
-                  ))}
-                </div>
-              </div>
-            </div>
+        <div className="flex items-start mb-4">
+          <div className="flex items-center justify-center mr-4">
+            <img src={SkinType} alt="User Icon" />
           </div>
-          <h1 className="text-2xl font-semibold text-gray-800">
-            What's your skin type?
-          </h1>
+          <div>
+            <h2 className="text-2xl font-semibold mb-1 mt-4">
+              What's your skin type?
+            </h2>
+          </div>
         </div>
 
         <div className="mb-8">
