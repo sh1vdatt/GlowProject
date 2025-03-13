@@ -41,7 +41,7 @@ const SkinAreaSelection = () => {
           <Button className="w-[150px] h-40 rounded-xl bg-gray-50 text-gray-800 hover:bg-gray-100 transition-colors border border-gray-200 flex flex-col justify-center items-center">
             <div className="mb-2">
               <img
-                src="src/assets/signup/face.png"
+                src="src/assets/signup/SkinAnalysis/face.png"
                 alt="Facial Skin"
                 className="h-20 w-20"
               />
@@ -52,7 +52,7 @@ const SkinAreaSelection = () => {
           <Button className="w-[150px] h-40 rounded-xl bg-gray-50 text-gray-800 hover:bg-gray-100 transition-colors border border-gray-200 flex flex-col justify-center items-center">
             <div className="mb-2">
               <img
-                src="src/assets/signup/back.png"
+                src="src/assets/signup/SkinAnalysis/back.png"
                 alt="Body Skin"
                 className="h-20 w-20"
               />
