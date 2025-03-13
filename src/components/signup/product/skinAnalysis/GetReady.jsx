@@ -13,7 +13,7 @@ const GetReadyScreen = () => {
   const { skinType } = useParams();
 
   const handleReady = () => {
-    navigate(`/skin-analysis/${skinType}`);
+    navigate(`/user-details/${skinType}`);
   };
 
   const handleBack = () => {
