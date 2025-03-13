@@ -3,15 +3,14 @@ import { Button } from "@/components/ui/button";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import Logo from "../../../../assets/sections/hero/Logo.png";
-import prescribtion from "../../../../assets/signup/SkinAnalysis/prescribtion.png";
+import pregnant from "../../../../assets/signup/SkinAnalysis/pregnant.png";
 
-const PrescribedSkincareQuestion = () => {
+const PregnancyQuestion = () => {
   const navigate = useNavigate();
   const { skinType } = useParams();
   const location = useLocation();
   const userDetails = location.state;
   const [selectedOption, setSelectedOption] = useState(null);
-  const [specification, setSpecification] = useState("");
 
   const handleBack = () => {
     navigate(-1);
@@ -19,11 +18,10 @@ const PrescribedSkincareQuestion = () => {
 
   const handleContinue = () => {
     if (selectedOption !== null) {
-      navigate(`/pregnancy-question/${skinType}`, {
+      navigate(`/next-step/${skinType}`, {
         state: {
           ...userDetails,
-          usingPrescribedSkincare: selectedOption,
-          prescribedSkincareDetails: specification,
+          pregnantOrBreastfeeding: selectedOption,
         },
       });
     }
@@ -57,11 +55,10 @@ const PrescribedSkincareQuestion = () => {
         <div className="mb-8">
           <div className="flex items-start gap-4">
             <div className="flex items-center justify-center mr-4">
-              <img src={prescribtion} alt="Skin Condition Icon" />
+              <img src={pregnant} alt="Skin Condition Icon" />
             </div>
             <h2 className="text-xl font-medium text-gray-800">
-              Are you currently using any prescribed or medicated skincare
-              products?
+              Are you pregnant or breastfeeding?
             </h2>
           </div>
         </div>
@@ -88,37 +85,10 @@ const PrescribedSkincareQuestion = () => {
           >
             No
           </Button>
-
-          <div className="mt-6">
-            <p className="text-gray-700 mb-2">
-              Please specify if comfortable (Optional)
-            </p>
-            <input
-              type="text"
-              placeholder="Specify here"
-              className="w-full p-4 border border-gray-300 rounded-xl bg-white"
-              value={specification}
-              onChange={(e) => setSpecification(e.target.value)}
-            />
-          </div>
-        </div>
-
-        <div className="mt-auto">
-          <Button
-            className={`w-full h-12 rounded-xl font-medium ${
-              selectedOption === null
-                ? "bg-gray-200"
-                : "bg-lime-200 hover:bg-lime-300"
-            } text-gray-800 transition-colors`}
-            onClick={handleContinue}
-            disabled={selectedOption === null}
-          >
-            Continue
-          </Button>
         </div>
       </div>
     </div>
   );
 };
 
-export default PrescribedSkincareQuestion;
+export default PregnancyQuestion;

@@ -133,7 +133,7 @@ const SkinConditionsForm = () => {
 
         <div className="mt-auto pt-4">
           <Button
-            className={`w-full h-12 rounded-md font-medium ${
+            className={`w-full h-12 rounded-xl font-medium ${
               selectedConditions.length > 0
                 ? "bg-lime-200 hover:bg-lime-300"
                 : "bg-gray-200"

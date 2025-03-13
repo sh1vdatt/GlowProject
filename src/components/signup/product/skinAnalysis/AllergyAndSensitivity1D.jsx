@@ -80,7 +80,7 @@ const IngredientPreferencesForm = () => {
             <div className="w-8 h-8 rounded-full bg-lime-200 flex items-center justify-center">
               2
             </div>
-            <div className="w-8 h-8 rounded-full bg-lime-200 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
               3
             </div>
           </div>
@@ -132,7 +132,7 @@ const IngredientPreferencesForm = () => {
 
         <div className="mt-auto pt-4">
           <Button
-            className={`w-full h-12 rounded-md font-medium ${
+            className={`w-full h-12 rounded-xl font-medium ${
               selectedPreferences.length > 0
                 ? "bg-lime-200 hover:bg-lime-300"
                 : "bg-gray-200"

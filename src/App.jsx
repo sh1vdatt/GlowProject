@@ -14,6 +14,7 @@ import AllergiesSelection from "./components/signup/product/skinAnalysis/Allergy
 import SkinConditionsForm from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1C";
 import IngredientPreferencesForm from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1D";
 import PrescribedSkincareQuestion from "./components/signup/product/skinAnalysis/CurrentCondition1A";
+import PregnancyQuestion from "./components/signup/product/skinAnalysis/CurrentCondition1B";
 
 function App() {
   return (
@@ -43,6 +44,10 @@ function App() {
         <Route
           path="/prescribed-skincare/:skinType"
           element={<PrescribedSkincareQuestion />}
+        />
+        <Route
+          path="/pregnancy-question/:skinType"
+          element={<PregnancyQuestion />}
         />
       </Routes>
     </BrowserRouter>
