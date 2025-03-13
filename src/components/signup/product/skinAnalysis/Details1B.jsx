@@ -128,11 +128,7 @@ const SkinTypeSelection = () => {
           <Button
             onClick={handleContinue}
             disabled={!selectedSkinType || !selectedSensitivity}
-            className={`w-full py-4 ${
-              selectedSkinType && selectedSensitivity
-                ? "bg-lime-200 hover:bg-lime-300"
-                : "bg-gray-200"
-            } text-gray-800 rounded-xl font-medium text-lg`}
+            className="py-4 bg-lime-200 text-gray-800 hover:bg-lime-300 rounded-xl font-medium mb-4 w-[186px] flex flex-col items-center mx-auto"
           >
             Continue
           </Button>

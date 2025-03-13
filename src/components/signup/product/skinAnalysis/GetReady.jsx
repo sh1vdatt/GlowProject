@@ -105,7 +105,7 @@ const GetReadyScreen = () => {
         </div>
 
         <Button
-          className="w-full py-4 bg-lime-200 text-gray-800 hover:bg-lime-300 rounded-xl font-medium mb-4"
+          className="py-4 bg-lime-200 text-gray-800 hover:bg-lime-300 rounded-xl font-medium mb-4 w-[186px] flex flex-col items-center mx-auto"
           onClick={handleReady}
         >
           I'm Ready

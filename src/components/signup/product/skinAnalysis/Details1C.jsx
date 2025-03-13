@@ -145,11 +145,7 @@ const SkinGoalsSelection = () => {
 
         <div className="mt-auto mb-4">
           <Button
-            className={`w-full ${
-              selectedGoals.length > 0
-                ? "bg-lime-300 hover:bg-lime-400"
-                : "bg-gray-200"
-            } text-gray-800 font-medium py-3 rounded-xl`}
+            className="py-4 bg-lime-200 text-gray-800 hover:bg-lime-300 rounded-xl font-medium mb-4 w-[186px] flex flex-col items-center mx-auto"
             onClick={handleContinue}
             disabled={selectedGoals.length === 0}
           >

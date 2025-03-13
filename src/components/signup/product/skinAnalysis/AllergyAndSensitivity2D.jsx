@@ -132,11 +132,7 @@ const IngredientPreferencesForm = () => {
 
         <div className="mt-auto pt-4">
           <Button
-            className={`w-full h-12 rounded-xl font-medium ${
-              selectedPreferences.length > 0
-                ? "bg-lime-200 hover:bg-lime-300"
-                : "bg-gray-200"
-            } text-gray-800 transition-colors`}
+            className="py-4 bg-lime-200 text-gray-800 hover:bg-lime-300 rounded-xl font-medium mb-4 w-[186px] flex flex-col items-center mx-auto"
             onClick={handleContinue}
             disabled={selectedPreferences.length === 0}
           >

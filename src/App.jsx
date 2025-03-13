@@ -9,12 +9,12 @@ import GetReadyScreen from "./components/signup/product/skinAnalysis/GetReady";
 import UserProfileForm from "./components/signup/product/skinAnalysis/Details1A";
 import SkinTypeSelection from "./components/signup/product/skinAnalysis/Details1B";
 import SkinGoalsSelection from "./components/signup/product/skinAnalysis/Details1C";
-import AllergiesQuestion from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1A";
-import AllergiesSelection from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1B";
-import SkinConditionsForm from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1C";
-import IngredientPreferencesForm from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1D";
-import PrescribedSkincareQuestion from "./components/signup/product/skinAnalysis/CurrentCondition1A";
-import PregnancyQuestion from "./components/signup/product/skinAnalysis/CurrentCondition1B";
+import AllergiesQuestion from "./components/signup/product/skinAnalysis/AllergyAndSensitivity2A";
+import AllergiesSelection from "./components/signup/product/skinAnalysis/AllergyAndSensitivity2B";
+import SkinConditionsForm from "./components/signup/product/skinAnalysis/AllergyAndSensitivity2C";
+import IngredientPreferencesForm from "./components/signup/product/skinAnalysis/AllergyAndSensitivity2D";
+import PrescribedSkincareQuestion from "./components/signup/product/skinAnalysis/CurrentCondition3A";
+import PregnancyQuestion from "./components/signup/product/skinAnalysis/CurrentCondition3B";
 
 function App() {
   return (

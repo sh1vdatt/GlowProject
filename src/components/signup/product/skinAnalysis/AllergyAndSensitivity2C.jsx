@@ -2,57 +2,61 @@ import React, { useState } from "react";
 import { Button } from "../../../ui/button";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
-import { Info } from "lucide-react";
 import Logo from "../../../../assets/sections/hero/Logo.png";
-import Allergies from "../../../../assets/signup/SkinAnalysis/allergies2.png";
+import skincondition from "../../../../assets/signup/SkinAnalysis/SkinCondition.png";
 
-const AllergiesSelection = () => {
+const SkinConditionsForm = () => {
   const navigate = useNavigate();
   const { skinType } = useParams();
   const location = useLocation();
   const userDetails = location.state;
-  const [otherSpecified, setOtherSpecified] = useState("");
-  const [selectedAllergies, setSelectedAllergies] = useState([]);
+  const [otherCondition, setOtherCondition] = useState("");
+  const [selectedConditions, setSelectedConditions] = useState([]);
 
-  const handleBack = () => {
-    navigate(-1);
+  const conditionsList = [
+    "Eczema",
+    "Psoriasis",
+    "Rosacea",
+    "Frequent Allergic Reactions",
+    "Others",
+    "None of the above",
+  ];
+
+  const handleConditionChange = (condition) => {
+    if (condition === "None of the above") {
+      if (selectedConditions.includes(condition)) {
+        setSelectedConditions([]);
+      } else {
+        setSelectedConditions(["None of the above"]);
+      }
+      return;
+    }
+
+    if (selectedConditions.includes("None of the above")) {
+      setSelectedConditions([]);
+    }
+
+    if (selectedConditions.includes(condition)) {
+      setSelectedConditions(
+        selectedConditions.filter((item) => item !== condition)
+      );
+    } else {
+      setSelectedConditions([...selectedConditions, condition]);
+    }
   };
 
   const handleContinue = () => {
-    navigate(`/skin-conditions/${skinType}`, {
+    navigate(`/ingredient-preferences/${skinType}`, {
       state: {
         ...userDetails,
-        specificAllergies: selectedAllergies,
-        otherAllergies: otherSpecified,
+        skinConditions: selectedConditions,
+        otherConditionDetails: otherCondition,
       },
     });
   };
 
-  const allergiesList = [
-    "Alpha-Hydroxy Acids (AHAs)",
-    "BHAs",
-    "Essential Oils",
-    "Fragrance or Perfumes",
-    "Formaldehyde",
-    "Hydroquinone",
-    "Lanolin",
-    "Nickel",
-    "Preservatives",
-    "Retinoids or Retinol",
-    "Sunscreen Ingredients",
-    "Sulfates",
-    "Others (Please specify)",
-    "I'm not sure about any of these",
-  ];
-
-  const handleAllergiesChange = (allergy) => {
-    if (selectedAllergies.includes(allergy)) {
-      setSelectedAllergies(
-        selectedAllergies.filter((item) => item !== allergy)
-      );
-    } else {
-      setSelectedAllergies([...selectedAllergies, allergy]);
-    }
+  const handleBack = () => {
+    navigate(-1);
   };
 
   return (
@@ -85,42 +89,40 @@ const AllergiesSelection = () => {
         <div className="mb-8">
           <div className="flex items-start gap-4">
             <div className="flex items-center justify-center mr-4">
-              <img src={Allergies} alt="Allergies Icon" />
+              <img src={skincondition} alt="Skin Condition Icon" />
             </div>
             <h2 className="text-xl font-medium text-gray-800">
-              Are you allergic to any of these common skincare ingredients?
+              Do you have any skin conditions or sensitivities we should be
+              aware of?
             </h2>
           </div>
         </div>
 
         <div className="space-y-4 mb-8">
-          {allergiesList.map((allergy, index) => (
+          {conditionsList.map((condition, index) => (
             <div key={index}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div
                     className="w-6 h-6 border border-gray-300 flex items-center justify-center rounded cursor-pointer"
-                    onClick={() => handleAllergiesChange(allergy)}
+                    onClick={() => handleConditionChange(condition)}
                   >
-                    {selectedAllergies.includes(allergy) && (
+                    {selectedConditions.includes(condition) && (
                       <div className="w-4 h-4 bg-lime-500 rounded-sm"></div>
                     )}
                   </div>
-                  <span className="text-gray-800">{allergy}</span>
+                  <span className="text-gray-800">{condition}</span>
                 </div>
-                <button className="text-gray-400">
-                  <Info size={16} />
-                </button>
               </div>
 
-              {allergy === "Others (Please specify)" &&
-                selectedAllergies.includes(allergy) && (
+              {condition === "Others" &&
+                selectedConditions.includes("Others") && (
                   <div className="mt-2 ml-9">
                     <input
                       type="text"
                       placeholder="Please specify"
-                      value={otherSpecified}
-                      onChange={(e) => setOtherSpecified(e.target.value)}
+                      value={otherCondition}
+                      onChange={(e) => setOtherCondition(e.target.value)}
                       className="w-full p-3 border border-gray-300 rounded-xl bg-white"
                     />
                   </div>
@@ -131,13 +133,9 @@ const AllergiesSelection = () => {
 
         <div className="mt-auto pt-4">
           <Button
-            className={`w-full h-12 rounded-xl font-medium ${
-              selectedAllergies.length > 0
-                ? "bg-lime-200 hover:bg-lime-300"
-                : "bg-gray-200"
-            } text-gray-800 transition-colors`}
+            className="py-4 bg-lime-200 text-gray-800 hover:bg-lime-300 rounded-xl font-medium mb-4 w-[186px] flex flex-col items-center mx-auto"
             onClick={handleContinue}
-            disabled={selectedAllergies.length === 0}
+            disabled={selectedConditions.length === 0}
           >
             Continue
           </Button>
@@ -147,4 +145,4 @@ const AllergiesSelection = () => {
   );
 };
 
-export default AllergiesSelection;
+export default SkinConditionsForm;
