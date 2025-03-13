@@ -23,7 +23,7 @@ const SkinGoalsSelection = () => {
   };
 
   const handleContinue = () => {
-    navigate(`/next-step/${skinType}`, {
+    navigate(`/allergies/${skinType}`, {
       state: {
         ...userDetails,
         skinGoals: selectedGoals,
