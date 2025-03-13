@@ -18,10 +18,10 @@ const AllergiesQuestion = () => {
 
   const handleContinue = () => {
     if (selectedOption !== null) {
-      navigate(`/next-step/${skinType}`, {
+      navigate(`/allergies-selection/${skinType}`, {
         state: {
           ...userDetails,
-          allergies: selectedOption,
+          hasAllergies: selectedOption,
         },
       });
     }
@@ -37,7 +37,6 @@ const AllergiesQuestion = () => {
           <div className="mx-auto">
             <img src={Logo} alt="Project Glow" className="h-8" />
           </div>
-          <div className="w-10"></div>
         </div>
 
         <div className="flex justify-center gap-2 mb-8">

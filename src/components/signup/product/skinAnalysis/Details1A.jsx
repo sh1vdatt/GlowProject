@@ -54,7 +54,6 @@ const UserProfileForm = () => {
           <div className="mx-auto">
             <img src={Logo} alt="Project Glow" className="h-8" />
           </div>
-          <div className="w-10"></div>
         </div>
 
         <div className="flex justify-center mb-8">
