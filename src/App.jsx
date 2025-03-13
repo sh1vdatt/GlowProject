@@ -12,6 +12,7 @@ import SkinGoalsSelection from "./components/signup/product/skinAnalysis/Details
 import AllergiesQuestion from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1A";
 import AllergiesSelection from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1B";
 import SkinConditionsForm from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1C";
+import IngredientPreferencesForm from "./components/signup/product/skinAnalysis/AllergyAndSensitivity1D";
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
         <Route
           path="/skin-conditions/:skinType"
           element={<SkinConditionsForm />}
+        />
+        <Route
+          path="/ingredient-preferences/:skinType"
+          element={<IngredientPreferencesForm />}
         />
       </Routes>
     </BrowserRouter>

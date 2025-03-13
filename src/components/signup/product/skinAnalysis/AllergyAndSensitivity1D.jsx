@@ -2,61 +2,61 @@ import React, { useState } from "react";
 import { Button } from "../../../ui/button";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { Info } from "lucide-react";
 import Logo from "../../../../assets/sections/hero/Logo.png";
-import skincondition from "../../../../assets/signup/SkinAnalysis/SkinCondition.png";
+import ingredient from "../../../../assets/signup/SkinAnalysis/ingredient.png";
 
-const SkinConditionsForm = () => {
+const IngredientPreferencesForm = () => {
   const navigate = useNavigate();
   const { skinType } = useParams();
   const location = useLocation();
   const userDetails = location.state;
-  const [otherCondition, setOtherCondition] = useState("");
-  const [selectedConditions, setSelectedConditions] = useState([]);
+  const [selectedPreferences, setSelectedPreferences] = useState([]);
+  const [specificIngredients, setSpecificIngredients] = useState("");
 
-  const conditionsList = [
-    "Eczema",
-    "Psoriasis",
-    "Rosacea",
-    "Frequent Allergic Reactions",
-    "Others",
+  const preferencesList = [
+    "I prefer fragrance-free products",
+    "I prefer alcohol-free products",
+    "I prefer vegan and cruelty-free products",
+    "I avoid specific active ingredients",
     "None of the above",
   ];
 
-  const handleConditionChange = (condition) => {
-    if (condition === "None of the above") {
-      if (selectedConditions.includes(condition)) {
-        setSelectedConditions([]);
+  const handlePreferenceChange = (preference) => {
+    if (preference === "None of the above") {
+      if (selectedPreferences.includes(preference)) {
+        setSelectedPreferences([]);
       } else {
-        setSelectedConditions(["None of the above"]);
+        setSelectedPreferences(["None of the above"]);
       }
       return;
     }
 
-    if (selectedConditions.includes("None of the above")) {
-      setSelectedConditions([]);
+    if (selectedPreferences.includes("None of the above")) {
+      setSelectedPreferences([]);
     }
 
-    if (selectedConditions.includes(condition)) {
-      setSelectedConditions(
-        selectedConditions.filter((item) => item !== condition)
+    if (selectedPreferences.includes(preference)) {
+      setSelectedPreferences(
+        selectedPreferences.filter((item) => item !== preference)
       );
     } else {
-      setSelectedConditions([...selectedConditions, condition]);
+      setSelectedPreferences([...selectedPreferences, preference]);
     }
-  };
-
-  const handleContinue = () => {
-    navigate(`/ingredient-preferences/${skinType}`, {
-      state: {
-        ...userDetails,
-        skinConditions: selectedConditions,
-        otherConditionDetails: otherCondition,
-      },
-    });
   };
 
   const handleBack = () => {
     navigate(-1);
+  };
+
+  const handleContinue = () => {
+    navigate(`/skin-analysis-results/${skinType}`, {
+      state: {
+        ...userDetails,
+        ingredientPreferences: selectedPreferences,
+        specificIngredientsToAvoid: specificIngredients,
+      },
+    });
   };
 
   return (
@@ -80,7 +80,7 @@ const SkinConditionsForm = () => {
             <div className="w-8 h-8 rounded-full bg-lime-200 flex items-center justify-center">
               2
             </div>
-            <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-lime-200 flex items-center justify-center">
               3
             </div>
           </div>
@@ -89,40 +89,39 @@ const SkinConditionsForm = () => {
         <div className="mb-8">
           <div className="flex items-start gap-4">
             <div className="flex items-center justify-center mr-4">
-              <img src={skincondition} alt="Skin Condition Icon" />
+              <img src={ingredient} alt="Skin Condition Icon" />
             </div>
             <h2 className="text-xl font-medium text-gray-800">
-              Do you have any skin conditions or sensitivities we should be
-              aware of?
+              Do you have any specific ingredient preferences or restrictions?
             </h2>
           </div>
         </div>
 
         <div className="space-y-4 mb-8">
-          {conditionsList.map((condition, index) => (
+          {preferencesList.map((preference, index) => (
             <div key={index}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div
                     className="w-6 h-6 border border-gray-300 flex items-center justify-center rounded cursor-pointer"
-                    onClick={() => handleConditionChange(condition)}
+                    onClick={() => handlePreferenceChange(preference)}
                   >
-                    {selectedConditions.includes(condition) && (
+                    {selectedPreferences.includes(preference) && (
                       <div className="w-4 h-4 bg-lime-500 rounded-sm"></div>
                     )}
                   </div>
-                  <span className="text-gray-800">{condition}</span>
+                  <span className="text-gray-800">{preference}</span>
                 </div>
               </div>
 
-              {condition === "Others" &&
-                selectedConditions.includes("Others") && (
+              {preference === "I avoid specific active ingredients" &&
+                selectedPreferences.includes(preference) && (
                   <div className="mt-2 ml-9">
                     <input
                       type="text"
                       placeholder="Please specify"
-                      value={otherCondition}
-                      onChange={(e) => setOtherCondition(e.target.value)}
+                      value={specificIngredients}
+                      onChange={(e) => setSpecificIngredients(e.target.value)}
                       className="w-full p-3 border border-gray-300 rounded-md bg-white"
                     />
                   </div>
@@ -134,12 +133,12 @@ const SkinConditionsForm = () => {
         <div className="mt-auto pt-4">
           <Button
             className={`w-full h-12 rounded-md font-medium ${
-              selectedConditions.length > 0
+              selectedPreferences.length > 0
                 ? "bg-lime-200 hover:bg-lime-300"
                 : "bg-gray-200"
             } text-gray-800 transition-colors`}
             onClick={handleContinue}
-            disabled={selectedConditions.length === 0}
+            disabled={selectedPreferences.length === 0}
           >
             Continue
           </Button>
@@ -149,4 +148,4 @@ const SkinConditionsForm = () => {
   );
 };
 
-export default SkinConditionsForm;
+export default IngredientPreferencesForm;
