@@ -7,6 +7,7 @@ import ProductSelection from "./components/signup/ProductChoice";
 import SkinAreaSelection from "./components/signup/product/skinAnalysis/SkinAreaSelection";
 import GetReadyScreen from "./components/signup/product/skinAnalysis/GetReady";
 import UserProfileForm from "./components/signup/product/skinAnalysis/Details1A";
+import SkinTypeSelection from "./components/signup/product/skinAnalysis/Details1B";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/skin-area-selection" element={<SkinAreaSelection />} />
         <Route path="/get-ready/:skinType" element={<GetReadyScreen />} />
         <Route path="/user-details/:skinType" element={<UserProfileForm />} />
+        <Route path="/skin-type/:skinType" element={<SkinTypeSelection />} />
       </Routes>
     </BrowserRouter>
   );

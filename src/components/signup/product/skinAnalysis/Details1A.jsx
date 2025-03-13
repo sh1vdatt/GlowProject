@@ -32,8 +32,8 @@ const UserProfileForm = () => {
       gender,
       location,
     });
-    // Navigate to next page with skin type
-    navigate(`/next-step/${skinType}`, {
+    // Navigate to skin type selection with user details in state
+    navigate(`/skin-type/${skinType}`, {
       state: {
         monthOfBirth,
         yearOfBirth,
