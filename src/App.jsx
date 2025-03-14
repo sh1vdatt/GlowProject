@@ -15,6 +15,7 @@ import SkinConditionsForm from "./components/signup/product/skinAnalysis/Allergy
 import IngredientPreferencesForm from "./components/signup/product/skinAnalysis/AllergyAndSensitivity2D";
 import PrescribedSkincareQuestion from "./components/signup/product/skinAnalysis/CurrentCondition3A";
 import PregnancyQuestion from "./components/signup/product/skinAnalysis/CurrentCondition3B";
+import ProductScanScreen from "./components/signup/product/productAnalysis/ScanProduct";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           path="/pregnancy-question/:skinType"
           element={<PregnancyQuestion />}
         />
+        <Route path="/scan-product" element={<ProductScanScreen />} />
       </Routes>
     </BrowserRouter>
   );

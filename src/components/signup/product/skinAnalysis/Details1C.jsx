@@ -126,7 +126,7 @@ const SkinGoalsSelection = () => {
               className={`w-full p-4 rounded-lg border border-gray-200 flex items-center ${
                 selectedGoals.includes(goal.id)
                   ? "bg-amber-50 border-amber-300"
-                  : "bg-white"
+                  : "border-gray-400"
               }`}
               onClick={() => toggleGoal(goal.id)}
             >
