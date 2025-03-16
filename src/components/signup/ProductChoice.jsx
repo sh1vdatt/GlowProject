@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
+import Logo from "../../assets/sections/hero/Logo.png";
 
 const ProductSelection = () => {
   const navigate = useNavigate();
@@ -17,11 +18,7 @@ const ProductSelection = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md bg-yellow-50 flex flex-col min-h-screen mx-auto py-8 px-8">
         <div className="mt-10 mb-12 text-center">
-          <img
-            src="src/assets/sections/hero/Logo.png"
-            alt="Project Glow"
-            className="h-8 mx-auto"
-          />
+          <img src={Logo} alt="Project Glow" className="h-8 mx-auto" />
         </div>
 
         <div className="text-center mb-14">

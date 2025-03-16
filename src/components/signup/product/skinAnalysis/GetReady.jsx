@@ -1,28 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../../ui/button";
-import { useNavigate, useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 import Logo from "../../../../assets/sections/hero/Logo.png";
 import BunImage from "../../../../assets/signup/SkinAnalysis/Bun.png";
 import RelaxFaceImage from "../../../../assets/signup/SkinAnalysis/RelaxFace.png";
 import GoodLightImage from "../../../../assets/signup/SkinAnalysis/GoodLight.png";
 import NoMakeupImage from "../../../../assets/signup/SkinAnalysis/Nomakeup.png";
 
+// Import the SkinAnalysisForm component
+import SkinAnalysisForm from "./SkinAnalysisForm";
+
 const GetReadyScreen = () => {
+  const [showAnalysisForm, setShowAnalysisForm] = useState(false);
+  const [skinType, setSkinType] = useState("facial"); // Default to facial, can be set based on previous selection
+  const [withoutImage, setWithoutImage] = useState(false);
   const navigate = useNavigate();
-  const { skinType } = useParams();
 
   const handleReady = () => {
-    navigate(`/user-details/${skinType}`);
+    setShowAnalysisForm(true);
   };
 
   const handleBack = () => {
-    navigate(-1);
+    navigate(-1); // Go back to the previous page
+  };
+  const handleAnalysisWithoutImage = () => {
+    setWithoutImage(true);
+    setShowAnalysisForm(true);
   };
 
-  const handleAnalysisWithoutImage = () => {
-    navigate(`/analysis-without-image/${skinType}`);
-  };
+  if (showAnalysisForm) {
+    return (
+      <SkinAnalysisForm
+        skinType={skinType}
+        withoutImage={withoutImage}
+        onBack={() => setShowAnalysisForm(false)}
+      />
+    );
+  }
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">

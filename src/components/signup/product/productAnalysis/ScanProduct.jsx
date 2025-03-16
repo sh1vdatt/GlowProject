@@ -4,19 +4,23 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../../../assets/sections/hero/Logo.png";
 import product from "../../../../assets/signup/ProductAnalysis/bottles.png";
+import ProductAnalysisForm from "./ProductAnalysisForm";
 
 const ProductScanScreen = () => {
   const navigate = useNavigate();
+  const [showAnalysisForm, setShowAnalysisForm] = useState(false);
+  const [productType, setProductType] = useState("facial");
 
   const handleBack = () => {
     navigate("/product-choice");
   };
 
-  const handleScan = () => {
-    console.log("Scan button clicked");
-  };
-
-  return (
+  return showAnalysisForm ? (
+    <ProductAnalysisForm
+      productType={productType}
+      onBack={() => setShowAnalysisForm(false)}
+    />
+  ) : (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md bg-yellow-50 flex flex-col min-h-screen mx-auto py-8 px-8 relative">
         <div className="flex items-center justify-between mb-6">
@@ -48,7 +52,7 @@ const ProductScanScreen = () => {
         <div className="flex justify-center mb-24">
           <Button
             className="py-4 bg-lime-200 text-gray-800 hover:bg-lime-300 rounded-xl font-medium w-full max-w-xs"
-            onClick={handleScan}
+            onClick={() => setShowAnalysisForm(true)}
           >
             Scan Your First Product
           </Button>
