@@ -8,6 +8,7 @@ import SkinAreaSelection from "./components/signup/product/skinAnalysis/SkinArea
 import GetReadyScreen from "./components/signup/product/skinAnalysis/GetReady";
 import SkinAnalysisForm from "./components/signup/product/skinAnalysis/SkinAnalysisForm";
 import ProductScanScreen from "./components/signup/product/productAnalysis/ScanProduct";
+import DisplayResult from "./components/signup/product/common/DisplayResult";
 
 function App() {
   return (
@@ -20,6 +21,12 @@ function App() {
         <Route path="/get-ready/:skinType" element={<GetReadyScreen />} />
         <Route path="/analysis/:skinType" element={<SkinAnalysisForm />} />
         <Route path="/scan-product" element={<ProductScanScreen />} />
+        <Route
+          path="/display-result"
+          element={
+            <DisplayResult logoSrc="/src/assets/sections/hero/Logo.png" />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,54 @@
+{
+  "myths": [
+    {
+      "id": 1,
+      "title": "You Don't Need Sunscreen on Cloudy Days",
+      "fact": "Even on cloudy days, 80% of UV rays penetrate the clouds and can damage your skin. Wearing sunscreen daily, rain or shine, helps prevent premature aging and reduces the risk of skin cancer."
+    },
+    {
+      "id": 2,
+      "title": "Oily Skin Doesn't Need Moisturizer",
+      "fact": "Skipping moisturizer can actually make oily skin worse! When your skin is dehydrated, it produces even more oil to compensate. Choose a light, oil-free moisturizer to maintain balance."
+    },
+    {
+      "id": 3,
+      "title": "Expensive Products Work Better",
+      "fact": "Price doesn't always reflect effectiveness. Many affordable products contain the same active ingredients found in high-end skincare. It's all about finding the right ingredients for your skin type and concerns."
+    },
+    {
+      "id": 4,
+      "title": "Natural Ingredients Are Always Better",
+      "fact": "While natural ingredients can be beneficial, they're not automatically safer or more effective. In fact, some natural extracts (like essential oils) can irritate sensitive skin. It's all about how ingredients are formulated together."
+    },
+    {
+      "id": 5,
+      "title": "You Only Need Sunscreen at the Beach",
+      "fact": "Sun damage can happen anytime you're exposed to UV rays, whether you're walking to work or sitting by a window. Daily sunscreen use helps prevent fine lines, dark spots, and wrinkles caused by UV exposure."
+    },
+    {
+      "id": 6,
+      "title": "You Can Shrink Your Pores",
+      "fact": "Unfortunately, you can't shrink your pores. But exfoliation, proper cleansing, and ingredients like salicylic acid can minimize their appearance by keeping them clean and free of buildup."
+    },
+    {
+      "id": 7,
+      "title": "The More You Exfoliate, the Better",
+      "fact": "Over-exfoliating can damage your skin barrier, leading to irritation, dryness, and breakouts. It's best to exfoliate 1-3 times a week depending on your skin type to avoid stripping the skin."
+    },
+    {
+      "id": 8,
+      "title": "Anti-Aging Products Are Only for Older People",
+      "fact": "It's never too early to start! Prevention is key, and incorporating ingredients like retinol and SPF in your 20s can help delay the signs of aging."
+    },
+    {
+      "id": 9,
+      "title": "Drinking More Water Will Fix Dry Skin",
+      "fact": "While hydration is important, dry skin often needs topical moisturizers to restore the skin barrier. Ingredients like hyaluronic acid and ceramides lock moisture into the skin more effectively."
+    },
+    {
+      "id": 10,
+      "title": "Acne is Caused by Poor Hygiene",
+      "fact": "Acne is often caused by hormonal changes, genetics, and excess oil production—not poor hygiene. In fact, over-cleansing can strip the skin and trigger more breakouts. A gentle skincare routine is usually the best approach."
+    }
+  ]
+}

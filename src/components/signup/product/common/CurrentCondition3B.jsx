@@ -1,12 +1,15 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import pregnant from "../../../../assets/signup/SkinAnalysis/pregnant.png";
 
 const PregnancyQuestionContent = ({ formData, updateFormData }) => {
   const { pregnantOrBreastfeeding = null } = formData;
+  const navigate = useNavigate();
 
   const handleOptionSelect = (option) => {
     updateFormData({ pregnantOrBreastfeeding: option });
+    navigate("/display-result");
   };
 
   return (

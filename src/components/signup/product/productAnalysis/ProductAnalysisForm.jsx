@@ -7,7 +7,7 @@ import AllergiesQuestionContent from "../common/AllergyAndSensitivity2A";
 import AllergiesSelectionContent from "../common/AllergyAndSensitivity2B";
 import SkinConditionsContent from "../common/AllergyAndSensitivity2C";
 import IngredientPreferencesContent from "../common/AllergyAndSensitivity2D";
-import PregnancyQuestionContent from "../common/CurrentCondition3A";
+import PregnancyQuestionContent from "../common/CurrentCondition3B";
 
 const ProductAnalysisForm = ({
   productType = "facial",
@@ -38,15 +38,15 @@ const ProductAnalysisForm = ({
   const handleBack = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
-    } else {
+    } else if (onBack) {
       onBack();
     }
   };
 
   const handleContinue = () => {
     if (currentStep < 6) {
-      if (currentStep === 4 && formData.hasAllergies === false) {
-        setCurrentStep(6); // Skip to skin conditions
+      if (currentStep === 2 && formData.hasAllergies === false) {
+        setCurrentStep(4);
       } else {
         setCurrentStep(currentStep + 1);
       }
@@ -55,22 +55,107 @@ const ProductAnalysisForm = ({
     }
   };
 
+  const getProgressStep = () => {
+    if (currentStep <= 1) return 1;
+    if (currentStep <= 5) return 2;
+    return 3;
+  };
+
   const isContinueDisabled = () => {
     switch (currentStep) {
       case 1:
         return !formData.gender || !formData.location;
       case 2:
-        return !formData.sensitivity;
-      case 3:
         return formData.hasAllergies === null;
-      case 4:
+      case 3:
         return formData.hasAllergies && formData.specificAllergies.length === 0;
-      case 5:
+      case 4:
         return formData.skinConditions.length === 0;
+      case 5:
+        return formData.ingredientPreferences.length === 0;
       case 6:
         return formData.pregnantOrBreastfeeding === null;
       default:
         return false;
+    }
+  };
+
+  const renderProgressIndicators = () => {
+    const currentProgress = getProgressStep();
+
+    return (
+      <div className="flex justify-center gap-2 mb-8">
+        <div
+          className={`w-8 h-8 rounded-full ${
+            currentProgress >= 1 ? "bg-lime-200" : "bg-gray-200"
+          } flex items-center justify-center`}
+        >
+          1
+        </div>
+        <div
+          className={`w-8 h-8 rounded-full ${
+            currentProgress >= 2 ? "bg-lime-200" : "bg-gray-200"
+          } flex items-center justify-center`}
+        >
+          2
+        </div>
+        <div
+          className={`w-8 h-8 rounded-full ${
+            currentProgress >= 3 ? "bg-lime-200" : "bg-gray-200"
+          } flex items-center justify-center`}
+        >
+          3
+        </div>
+      </div>
+    );
+  };
+
+  const renderStepContent = () => {
+    switch (currentStep) {
+      case 1:
+        return (
+          <UserProfileContent
+            formData={formData}
+            updateFormData={updateFormData}
+          />
+        );
+      case 2:
+        return (
+          <AllergiesQuestionContent
+            formData={formData}
+            updateFormData={updateFormData}
+          />
+        );
+      case 3:
+        return (
+          <AllergiesSelectionContent
+            formData={formData}
+            updateFormData={updateFormData}
+          />
+        );
+      case 4:
+        return (
+          <SkinConditionsContent
+            formData={formData}
+            updateFormData={updateFormData}
+          />
+        );
+      case 5:
+        return (
+          <IngredientPreferencesContent
+            formData={formData}
+            updateFormData={updateFormData}
+          />
+        );
+      case 6:
+        return (
+          <PregnancyQuestionContent
+            formData={formData}
+            updateFormData={updateFormData}
+          />
+        );
+      default:
+        return null;
     }
   };
 
@@ -87,43 +172,9 @@ const ProductAnalysisForm = ({
           <div className="w-10"></div>
         </div>
 
-        {/* Step Content (Dynamically Rendered) */}
-        {currentStep === 1 && (
-          <UserProfileContent
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        )}
-        {currentStep === 2 && (
-          <AllergiesQuestionContent
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        )}
-        {currentStep === 3 && (
-          <AllergiesSelectionContent
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        )}
-        {currentStep === 4 && (
-          <SkinConditionsContent
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        )}
-        {currentStep === 5 && (
-          <IngredientPreferencesContent
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        )}
-        {currentStep === 6 && (
-          <PregnancyQuestionContent
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        )}
+        {renderProgressIndicators()}
+
+        {renderStepContent()}
 
         <div className="mt-auto pt-4">
           <Button
