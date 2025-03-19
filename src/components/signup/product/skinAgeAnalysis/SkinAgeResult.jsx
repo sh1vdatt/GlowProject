@@ -1,12 +1,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Upload } from "lucide-react";
 import Logo from "../../../../assets/sections/hero/Logo.png";
-import { Menu, Globe, Scan, Camera } from "lucide-react";
+import { Menu, Globe, Scan, Share2 } from "lucide-react";
 
-const UploadPhoto = ({ onNext }) => {
-  const handleUpload = () => {
-    onNext();
+import Photo from "../../../../assets/signup/SkinAgeAnalysis/demo-result.jpg";
+
+const SkinAgeResults = ({ onBack }) => {
+  const handleUploadNewPhoto = () => {
+    onBack();
   };
 
   return (
@@ -29,25 +30,32 @@ const UploadPhoto = ({ onNext }) => {
               <Scan size={24} />
             </button>
           </div>
-        </div>{" "}
+        </div>
+
         <div className="flex flex-col items-center justify-center flex-grow gap-4">
-          <div className="flex flex-col items-center justify-center gap-4">
-            <Button
-              onClick={handleUpload}
-              className="w-16 h-16 bg-purple-400 hover:bg-purple-500 text-white rounded-full flex items-center justify-center"
-            >
-              <Upload className="w-6 h-6" />
-            </Button>
+          <h2 className="text-3xl font-medium text-purple-400 mb-4">
+            Your Skin Age Result:
+          </h2>
+
+          <div className="rounded-3xl overflow-hidden mb-4 w-full max-w-sm relative">
+            <img src={Photo} alt="Skin age result" className="w-full h-auto" />
           </div>
 
-          <h2 className="text-3xl font-medium text-purple-400 mb-1">
-            Upload Photo
-          </h2>
-          <p className="text-gray-600 mb-2">Tap to select image</p>
+          <p className="text-center text-gray-800 mb-4">
+            Feeling like another round or want to spread the fun with friends?
+          </p>
+
+          {/* Action buttons */}
+          <Button
+            onClick={handleUploadNewPhoto}
+            className="w-64 h-12 rounded-full font-medium bg-lime-200 hover:bg-lime-300 text-gray-800 mb-3"
+          >
+            Upload New Photo
+          </Button>
 
           <Button className="w-64 h-12 rounded-full font-medium bg-lime-200 hover:bg-lime-300 text-gray-800 flex items-center justify-center gap-2">
-            <Camera />
-            Take a Selfie
+            <Share2 size={18} />
+            Share
           </Button>
         </div>
       </div>
@@ -55,4 +63,4 @@ const UploadPhoto = ({ onNext }) => {
   );
 };
 
-export default UploadPhoto;
+export default SkinAgeResults;

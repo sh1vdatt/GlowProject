@@ -10,6 +10,7 @@ import SkinAnalysisForm from "./components/signup/product/skinAnalysis/SkinAnaly
 import ProductScanScreen from "./components/signup/product/productAnalysis/ScanProduct";
 import DisplayResult from "./components/signup/product/common/DisplayResult";
 import UploadPhoto from "./components/signup/product/skinAgeAnalysis/UploadImage";
+import SkinAgeAnalysisFlow from "./components/signup/product/skinAgeAnalysis/SkinAgeAnalysisFlow";
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
           element={
             <DisplayResult logoSrc="/src/assets/sections/hero/Logo.png" />
           }
+        />
+        <Route
+          path="/skin-age-analysis-flow"
+          element={<SkinAgeAnalysisFlow />}
         />
       </Routes>
     </BrowserRouter>

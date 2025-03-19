@@ -15,7 +15,7 @@ const ProductSelection = () => {
   };
 
   const handleAgeDetection = () => {
-    navigate("/upload-image");
+    navigate("/skin-age-analysis-flow");
   };
 
   return (
@@ -51,7 +51,7 @@ const ProductSelection = () => {
           </Button>
 
           <Button
-            className="w-[289px] h-24 rounded-xl font-medium bg-orange-400 text-gray-800 hover:bg-orange-400 transition-colors flex flex-col"
+            className="w-[289px] h-24 rounded-xl font-medium bg-orange-200 text-gray-800 hover:bg-orange-300 transition-colors flex flex-col"
             onClick={handleAgeDetection}
           >
             <span className="text-xl font-semibold mb-1">Age Detection</span>
