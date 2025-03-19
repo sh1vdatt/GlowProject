@@ -1,8 +1,9 @@
 import React from "react";
 import { Button } from "../ui/button";
-import { Mail, Apple, Facebook } from "lucide-react";
+import { Mail, Facebook } from "lucide-react";
 import { FaGoogle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineApple } from "react-icons/ai";
 import Logo from "../../assets/sections/hero/Logo.png";
 
 const Authentication = () => {
@@ -47,7 +48,7 @@ const Authentication = () => {
             className="w-full h-14 rounded-full font-medium bg-black text-white hover:bg-gray-900 transition-colors"
             onClick={handleAuthSuccess}
           >
-            <Apple size={20} className="mr-3" /> Continue with Apple
+            <AiOutlineApple /> Continue with Apple
           </Button>
         </div>
 
