@@ -14,6 +14,10 @@ const ProductSelection = () => {
     navigate("/scan-product");
   };
 
+  const handleAgeDetection = () => {
+    navigate("/upload-image");
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md bg-yellow-50 flex flex-col min-h-screen mx-auto py-8 px-8">
@@ -46,7 +50,10 @@ const ProductSelection = () => {
             <span className="text-sm">One scan tells all!</span>
           </Button>
 
-          <Button className="w-[289px] h-24 rounded-xl font-medium bg-orange-400 text-gray-800 hover:bg-orange-400 transition-colors flex flex-col">
+          <Button
+            className="w-[289px] h-24 rounded-xl font-medium bg-orange-400 text-gray-800 hover:bg-orange-400 transition-colors flex flex-col"
+            onClick={handleAgeDetection}
+          >
             <span className="text-xl font-semibold mb-1">Age Detection</span>
             <span className="text-sm">Curious about your facial skin age?</span>
             <span className="text-sm">Check it now!</span>
