@@ -1,7 +1,10 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Logo from "../../../../assets/sections/hero/Logo.png";
-import { Menu, Globe, Scan, Share2 } from "lucide-react";
+import { Share2 } from "lucide-react";
+import { MdOutlineDocumentScanner } from "react-icons/md";
+import { FaGlobeAsia } from "react-icons/fa";
+import { LuMenu } from "react-icons/lu";
 
 import Photo from "../../../../assets/signup/SkinAgeAnalysis/demo-result.jpg";
 
@@ -21,13 +24,13 @@ const SkinAgeResults = ({ onBack }) => {
           </div>
           <div className="flex space-x-4">
             <button className="text-gray-800">
-              <Menu size={24} />
+              <LuMenu size={24} />
             </button>
             <button className="text-gray-800">
-              <Globe size={24} />
+              <FaGlobeAsia size={24} />
             </button>
             <button className="text-gray-800">
-              <Scan size={24} />
+              <MdOutlineDocumentScanner size={24} />
             </button>
           </div>
         </div>
