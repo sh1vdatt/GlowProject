@@ -1,0 +1,67 @@
+{
+  "results": [
+    {
+      "overall_skin_score": 50,
+      "skin_age": 25,
+      "comparison_score": 70,
+      "comprehensive_level": 60,
+      "skin_type": "Combination",
+      "sensitivity": "Sensitive",
+      "summary": "The skin exhibits a mix of issues, such as mild acne, hyperpigmentation, and fine lines. It appears to be a combination skin type, with some areas showing oiliness while others seem normal to dry.",
+      "issues_identified": [
+        { "id": 1, "name": "Wrinkles", "severity": "minimal" },
+        { "id": 2, "name": "Dark spot", "severity": "mild" },
+        { "id": 3, "name": "Redness", "severity": "severe" },
+        { "id": 4, "name": "Acne", "severity": "mild" },
+        { "id": 5, "name": "Texture", "severity": "mild" },
+        { "id": 6, "name": "Hydration", "severity": "minimal" },
+        { "id": 7, "name": "Pore Size", "severity": "severe" },
+        { "id": 8, "name": "Dark Circles", "severity": "mild" },
+        { "id": 9, "name": "Sun Damage", "severity": "minimal" },
+        { "id": 10, "name": "Firmness", "severity": "severe" }
+      ]
+    },
+    {
+      "overall_skin_score": 85,
+      "skin_age": 22,
+      "comparison_score": 80,
+      "comprehensive_level": 75,
+      "skin_type": "Oily",
+      "sensitivity": "Normal",
+      "summary": "The skin appears youthful with good hydration but is prone to oiliness and breakouts. Some areas show enlarged pores and mild hyperpigmentation.",
+      "issues_identified": [
+        { "id": 1, "name": "Wrinkles", "severity": "minimal" },
+        { "id": 2, "name": "Dark spot", "severity": "mild" },
+        { "id": 3, "name": "Redness", "severity": "mild" },
+        { "id": 4, "name": "Acne", "severity": "moderate" },
+        { "id": 5, "name": "Texture", "severity": "minimal" },
+        { "id": 6, "name": "Hydration", "severity": "good" },
+        { "id": 7, "name": "Pore Size", "severity": "moderate" },
+        { "id": 8, "name": "Dark Circles", "severity": "minimal" },
+        { "id": 9, "name": "Sun Damage", "severity": "mild" },
+        { "id": 10, "name": "Firmness", "severity": "good" }
+      ]
+    },
+    {
+      "overall_skin_score": 65,
+      "skin_age": 30,
+      "comparison_score": 55,
+      "comprehensive_level": 50,
+      "skin_type": "Dry",
+      "sensitivity": "Highly Sensitive",
+      "summary": "The skin shows dryness and sensitivity, with visible fine lines and redness. Hydration levels are low, and there is a need for improved moisture retention.",
+      "issues_identified": [
+        { "id": 1, "name": "Wrinkles", "severity": "moderate" },
+        { "id": 2, "name": "Dark spot", "severity": "moderate" },
+        { "id": 3, "name": "Redness", "severity": "severe" },
+        { "id": 4, "name": "Acne", "severity": "minimal" },
+        { "id": 5, "name": "Texture", "severity": "moderate" },
+        { "id": 6, "name": "Hydration", "severity": "severe" },
+        { "id": 7, "name": "Pore Size", "severity": "minimal" },
+        { "id": 8, "name": "Dark Circles", "severity": "moderate" },
+        { "id": 9, "name": "Sun Damage", "severity": "severe" },
+        { "id": 10, "name": "Firmness", "severity": "moderate" }
+      ]
+    }
+  ]
+}
