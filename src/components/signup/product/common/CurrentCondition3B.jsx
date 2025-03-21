@@ -1,15 +1,27 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import pregnant from "../../../../assets/signup/SkinAnalysis/pregnant.png";
 
 const PregnancyQuestionContent = ({ formData, updateFormData }) => {
   const { pregnantOrBreastfeeding = null } = formData;
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleOptionSelect = (option) => {
     updateFormData({ pregnantOrBreastfeeding: option });
-    navigate("/display-result");
+
+    // Check if the path is from skin analysis route (/analysis/:skinType or /get-ready/:skinType)
+    const isSkinAnalysis =
+      location.pathname.startsWith("/analysis/") ||
+      location.pathname.startsWith("/get-ready/");
+
+    // Navigate to the correct display result component, not directly to the result page
+    if (isSkinAnalysis) {
+      navigate("/skin-analysis-display");
+    } else {
+      navigate("/product-analysis-display");
+    }
   };
 
   return (

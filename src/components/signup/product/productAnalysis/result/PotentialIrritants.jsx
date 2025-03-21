@@ -4,12 +4,8 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import { IoWarningOutline } from "react-icons/io5";
 
 const PotentialIrritants = ({ irritants, onIrritantClick }) => {
-  const getStatusIcon = (status) => {
-    if (status === "Use with caution!") {
-      return <IoIosCheckmarkCircle className="text-amber-400 w-6 h-6" />;
-    } else {
-      return <IoWarningOutline className="text-red-400 w-6 h-6" />;
-    }
+  const getStatusIcon = (name) => {
+    return <IoWarningOutline className="text-red-400 w-6 h-6" />;
   };
 
   const getStatusDescription = (irritant) => {
@@ -61,7 +57,7 @@ const PotentialIrritants = ({ irritants, onIrritantClick }) => {
             onClick={() => onIrritantClick(irritant.name)}
           >
             <div className="flex items-center">
-              {getStatusIcon(irritant.status)}
+              {getStatusIcon(irritant.name)}
               <div className="ml-2">
                 <div className="font-medium text-gray-800">{irritant.name}</div>
                 <div className="text-gray-600 text-sm">

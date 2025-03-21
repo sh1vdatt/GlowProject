@@ -8,7 +8,8 @@ import SkinAreaSelection from "./components/signup/product/skinAnalysis/SkinArea
 import GetReadyScreen from "./components/signup/product/skinAnalysis/GetReady";
 import SkinAnalysisForm from "./components/signup/product/skinAnalysis/SkinAnalysisForm";
 import ProductScanScreen from "./components/signup/product/productAnalysis/ScanProduct";
-import DisplayResult from "./components/signup/product/common/DisplayResult";
+import SkinDisplayResult from "./components/signup/product/skinAnalysis/DisplaySkinResult";
+import ProductDisplayResult from "./components/signup/product/productAnalysis/DisplayProductResult";
 import UploadPhoto from "./components/signup/product/skinAgeAnalysis/UploadImage";
 import SkinAgeAnalysisFlow from "./components/signup/product/skinAgeAnalysis/SkinAgeAnalysisFlow";
 import ResultsPage from "./components/signup/product/skinAnalysis/result/SkinResult";
@@ -27,9 +28,15 @@ function App() {
         <Route path="/scan-product" element={<ProductScanScreen />} />
         <Route path="/upload-image" element={<UploadPhoto />} />
         <Route
-          path="/display-result"
+          path="/skin-analysis-display"
           element={
-            <DisplayResult logoSrc="/src/assets/sections/hero/Logo.png" />
+            <SkinDisplayResult logoSrc="/src/assets/sections/hero/Logo.png" />
+          }
+        />
+        <Route
+          path="/product-analysis-display"
+          element={
+            <ProductDisplayResult logoSrc="/src/assets/sections/hero/Logo.png" />
           }
         />
         <Route

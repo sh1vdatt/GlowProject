@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import Logo from "../../../../assets/sections/hero/Logo.png";
 import mythsData from "@/components/signup/product/common/skincare-myths.json";
@@ -8,17 +8,10 @@ import result from "../../../../assets/signup/result.png";
 
 const DisplayResultContent = ({ formData, updateFormData }) => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [isAnalysisComplete, setIsAnalysisComplete] = useState(false);
-
   const [selectedMyths, setSelectedMyths] = useState([]);
-
   const [activeIndex, setActiveIndex] = useState(0);
-
   const carouselRef = useRef(null);
-
-  // Determine which type of analysis this is based on the path
-  const isProductAnalysis = location.pathname.includes("product-analysis");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -60,7 +53,6 @@ const DisplayResultContent = ({ formData, updateFormData }) => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md bg-yellow-50 flex flex-col min-h-screen mx-auto mt-2 py-8 px-8 relative">
-        {/* Header with logo */}
         <div className="flex items-center justify-between mb-6 mx-auto">
           <img src={Logo} alt="Project Glow" className="h-8" />
         </div>
@@ -87,13 +79,7 @@ const DisplayResultContent = ({ formData, updateFormData }) => {
               <div className="bg-lime-200 px-4 py-1.5 rounded-xl">
                 <button
                   className="text-xl font-medium text-gray-800"
-                  onClick={() => {
-                    if (location.state?.from === "product-analysis") {
-                      navigate("/product-analysis-result");
-                    } else {
-                      navigate("/skin-analysis-result");
-                    }
-                  }}
+                  onClick={() => navigate("/product-analysis-result")}
                 >
                   Your report is ready
                 </button>
