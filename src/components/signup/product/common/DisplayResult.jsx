@@ -88,7 +88,7 @@ const DisplayResultContent = ({ formData, updateFormData }) => {
                 <button
                   className="text-xl font-medium text-gray-800"
                   onClick={() => {
-                    if (isProductAnalysis) {
+                    if (location.state?.from === "product-analysis") {
                       navigate("/product-analysis-result");
                     } else {
                       navigate("/skin-analysis-result");

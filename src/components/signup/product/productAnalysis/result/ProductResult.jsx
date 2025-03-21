@@ -17,21 +17,18 @@ const ProductResultPage = () => {
   // State to store the results data
   const [resultsData, setResultsData] = useState(null);
   const [irritantsData, setIrritantsData] = useState(null);
-  const [suitabilityData, setSuitabilityData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedIngredient, setSelectedIngredient] = useState(null);
 
   useEffect(() => {
-    // Fetch all data
+    // Fetch both product and irritants data
     Promise.all([
       import("./product-ingredient.json"),
       import("./irritants.json"),
-      import("./product-suitability.json"),
     ])
-      .then(([productData, irritantsData, suitabilityData]) => {
+      .then(([productData, irritantsData]) => {
         setResultsData(productData.default);
         setIrritantsData(irritantsData.irritants);
-        setSuitabilityData(suitabilityData.suitabilityAnalysis);
         setLoading(false);
       })
       .catch((error) => {
@@ -102,9 +99,6 @@ const ProductResultPage = () => {
         <Summary />
 
         {/* Product Suitability component */}
-        {!loading && suitabilityData && (
-          <ProductSuitability suitabilityData={suitabilityData} />
-        )}
 
         {/* KeyIngredients with the loaded data */}
         {!loading && resultsData && (
@@ -130,6 +124,7 @@ const ProductResultPage = () => {
           />
         )}
 
+        <ProductSuitability />
         <div className="mt-auto">
           <div className="bg-yellow-100 rounded-xl p-4 mb-4">
             <div className="flex items-start ">
