@@ -11,7 +11,8 @@ import ProductScanScreen from "./components/signup/product/productAnalysis/ScanP
 import DisplayResult from "./components/signup/product/common/DisplayResult";
 import UploadPhoto from "./components/signup/product/skinAgeAnalysis/UploadImage";
 import SkinAgeAnalysisFlow from "./components/signup/product/skinAgeAnalysis/SkinAgeAnalysisFlow";
-import ResultsPage from "./components/signup/product/skinAnalysis/result/Hero";
+import ResultsPage from "./components/signup/product/skinAnalysis/result/SkinResult";
+import ProductResultPage from "./components/signup/product/productAnalysis/result/ProductResult";
 
 function App() {
   return (
@@ -36,6 +37,10 @@ function App() {
           element={<SkinAgeAnalysisFlow />}
         />
         <Route path="/skin-analysis-result" element={<ResultsPage />} />
+        <Route
+          path="/product-analysis-result"
+          element={<ProductResultPage />}
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,44 @@
+{
+  "irritants": [
+    {
+      "id": "001",
+      "name": "Retinol",
+      "status": "Use with caution!",
+      "accuracy": "Based on 60% analysis accuracy.",
+      "description": "Retinol is a powerful anti-aging ingredient but may irritate sensitive or eczema-prone skin if not used cautiously.",
+      "function": "Retinol is a derivative of vitamin A that promotes skin cell turnover, reducing wrinkles, fine lines, and hyperpigmentation. It’s often celebrated as a gold-standard ingredient for anti-aging and acne.",
+      "usage": "Introduce retinol slowly into your routine, starting with a low concentration (0.25% or less) and using it once or twice a week. Pair with a hydrating moisturizer to buffer its potential drying effects.",
+      "note": "With mild eczema, retinol may exacerbate dryness or irritation. Avoid using it on active flare-ups, and consult a dermatologist if unsure. Always pair with sunscreen, as retinol increases sun sensitivity."
+    },
+    {
+      "id": "002",
+      "name": "Fragrance",
+      "status": "Not suitable for you!",
+      "accuracy": "Based on 60% analysis accuracy.",
+      "description": "Fragrance can be a major trigger for irritation and flare-ups in eczema-prone skin. It’s best to avoid products with added fragrance.",
+      "function": "Fragrance is used to enhance the sensory experience of skincare products. While it doesn’t add functional benefits to skin health, it can make products smell appealing.",
+      "usage": "Opt for fragrance-free versions of your skincare products to reduce the risk of irritation. Look for labels that say 'fragrance-free' or 'unscented.'",
+      "note": "Fragrance is a common irritant, especially for those with sensitive or eczema-prone skin like Jen’s. It can disrupt the skin barrier and worsen symptoms. Avoid products with synthetic or natural fragrances entirely."
+    },
+    {
+      "id": "003",
+      "name": "BHT",
+      "status": "Not suitable for you!",
+      "accuracy": "Based on 60% analysis accuracy.",
+      "description": "BHT (Butylated Hydroxytoluene) is a preservative that prevents product spoilage but may cause mild irritation in sensitive or eczema-prone skin.",
+      "function": "BHT acts as an antioxidant to maintain the stability of skincare products, extending their shelf life. It prevents the degradation of active ingredients.",
+      "usage": "This ingredient is found in a wide variety of formulations, from moisturizers to makeup. If you notice irritation, opt for BHT-free products.",
+      "note": "While BHT is generally regarded as safe, its synthetic nature can be a concern for sensitive skin. Patch test products containing BHT and monitor for any signs of redness or discomfort."
+    },
+    {
+      "id": "004",
+      "name": "Alcohols",
+      "status": "Not suitable for you!",
+      "accuracy": "Based on 60% analysis accuracy.",
+      "description": "Certain alcohols can be drying and irritating, especially for those with eczema. Avoid products with high concentrations of 'drying alcohols.'",
+      "function": "Alcohols in skincare serve as solvents or preservatives and can provide a quick-drying finish. However, fatty alcohols like cetyl or stearyl alcohol are hydrating and beneficial.",
+      "usage": "Check the label for the type of alcohol used. Avoid products with denatured alcohol or isopropyl alcohol, as they strip moisture. Opt for formulations with fatty alcohols, which are safe for sensitive skin.",
+      "note": "Drying alcohols can weaken the skin barrier, worsening eczema symptoms. Hydrating alcohols (e.g., cetyl or stearyl alcohol) are safe and may even help soothe your skin."
+    }
+  ]
+}

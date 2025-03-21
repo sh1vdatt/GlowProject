@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import Logo from "../../../../assets/sections/hero/Logo.png";
 import mythsData from "@/components/signup/product/common/skincare-myths.json";
@@ -6,6 +7,8 @@ import loading from "../../../../assets/signup/loading.png";
 import result from "../../../../assets/signup/result.png";
 
 const DisplayResultContent = ({ formData, updateFormData }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isAnalysisComplete, setIsAnalysisComplete] = useState(false);
 
   const [selectedMyths, setSelectedMyths] = useState([]);
@@ -13,6 +16,9 @@ const DisplayResultContent = ({ formData, updateFormData }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const carouselRef = useRef(null);
+
+  // Determine which type of analysis this is based on the path
+  const isProductAnalysis = location.pathname.includes("product-analysis");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -79,7 +85,16 @@ const DisplayResultContent = ({ formData, updateFormData }) => {
                 <img src={result} alt="Analysis Complete" />
               </div>
               <div className="bg-lime-200 px-4 py-1.5 rounded-xl">
-                <button className="text-xl font-medium text-gray-800">
+                <button
+                  className="text-xl font-medium text-gray-800"
+                  onClick={() => {
+                    if (isProductAnalysis) {
+                      navigate("/product-analysis-result");
+                    } else {
+                      navigate("/skin-analysis-result");
+                    }
+                  }}
+                >
                   Your report is ready
                 </button>
               </div>

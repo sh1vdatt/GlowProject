@@ -1,0 +1,28 @@
+{
+  "suitabilityAnalysis": {
+    "categories": [
+      {
+        "id": 1,
+        "name": "Blemish Control",
+        "status": "Not Ideal",
+        "description": "Retinol can help, but fragrance and potential irritants could trigger sensitivities."
+      },
+      {
+        "id": 2,
+        "name": "Hydration",
+        "status": "Suitable",
+        "description": "Contains hyaluronic acid and glycerin for added moisture."
+      },
+      {
+        "id": 3,
+        "name": "Smooth Texture",
+        "status": "Suitable",
+        "description": "Retinol and hyaluronic acid can smooth skin over time."
+      }
+    ],
+    "suggestion": {
+      "title": "Gentle Suggestion",
+      "description": "Consider using a small amount initially or patch-testing due to sensitivity concerns."
+    }
+  }
+}

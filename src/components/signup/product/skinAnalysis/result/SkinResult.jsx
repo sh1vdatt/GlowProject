@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { Button } from "@/components/ui/button";
 import Logo from "../../../../../assets/sections/hero/Logo.png";
@@ -10,6 +11,7 @@ import Summary from "./Summary";
 import SkinIssuesSection from "./SkinIssuesResult";
 
 const ResultsPage = () => {
+  const navigate = useNavigate();
   // State to store the results data
   const [resultsData, setResultsData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -44,7 +46,7 @@ const ResultsPage = () => {
         </div>
 
         <div className="flex items-center justify-between text-center text-gray-600 text-sm mb-4">
-          <button className="rounded-full">
+          <button className="rounded-full" onClick={() => navigate(-1)}>
             <IoIosArrowBack className="h-5 w-5 text-gray-800" />
           </button>
           {getCurrentDate()}
@@ -92,7 +94,10 @@ const ResultsPage = () => {
               Share result with friends
             </Button>
 
-            <Button className="w-[249px] bg-lime-300 hover:bg-lime-400 text-gray-800 font-medium py-3 rounded-full mb-6 flex items-center justify-center">
+            <Button
+              className="w-[249px] bg-lime-300 hover:bg-lime-400 text-gray-800 font-medium py-3 rounded-full mb-6 flex items-center justify-center"
+              onClick={() => navigate("/")}
+            >
               <img src={BackHomeIcon} alt="Back" className="h-5 w-5 mr-2" />
               Back to Home Screen
             </Button>

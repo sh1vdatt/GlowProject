@@ -1,0 +1,44 @@
+{
+  "ingredients": [
+    {
+      "id": "001",
+      "name": "Vitamin C",
+      "suitability": "Suitable for you",
+      "accuracy": "60% analysis accuracy",
+      "description": "Vitamin C is a potent antioxidant that protects the skin and promotes collagen production.",
+      "function": "Accelerate skin renewal, boost collagen production, and reduce fine lines and wrinkles. Retinoids are derivatives of Vitamin A and are considered one of the most effective anti-aging ingredients.",
+      "usage": "Start with lower concentrations to assess skin tolerance and gradually increase. Use at night and apply sunscreen during the day as retinoids can increase sun sensitivity.",
+      "note": "Retinoids can be strong, so it’s best to start with a lower concentration to minimize irritation and gradually build tolerance."
+    },
+    {
+      "id": "002",
+      "name": "Glycerin",
+      "suitability": "Suitable for you",
+      "accuracy": "60% analysis accuracy",
+      "description": "Glycerin is a hydrating hero that is generally safe for eczema-prone skin, helping to lock in moisture.",
+      "function": "Glycerin is a humectant that draws water into the skin, improving hydration levels and supporting the skin barrier. It is gentle and effective for most skin types, including dry and sensitive skin.",
+      "usage": "Look for products with glycerin as a primary ingredient, especially in moisturizers or serums. Use it morning and evening after cleansing to keep your skin plump and moisturized.",
+      "note": "Glycerin is well-tolerated for eczema, but ensure the product containing it doesn’t include other irritants like fragrance or alcohol, which could offset its benefits."
+    },
+    {
+      "id": "003",
+      "name": "Butylene Glycol",
+      "suitability": "Suitable for you",
+      "accuracy": "60% analysis accuracy",
+      "description": "A versatile humectant and texture enhancer, Butylene Glycol helps hydrate and improve the feel of skincare products. It’s generally safe for most skin types.",
+      "function": "This ingredient is used to boost product absorption, hydrate the skin, and improve the texture of formulations. It helps skincare products glide smoothly onto the skin.",
+      "usage": "Use products containing Butylene Glycol as part of your daily routine to maintain hydration, especially in lightweight moisturizers or serums.",
+      "note": "Butylene Glycol is typically non-irritating, but in rare cases, it can cause sensitivity or redness in people with eczema. Monitor your skin for any reactions."
+    },
+    {
+      "id": "004",
+      "name": "Hyaluronic Acid",
+      "suitability": "Suitable for you",
+      "accuracy": "60% analysis accuracy",
+      "description": "Hyaluronic Acid (HA) is a hydration powerhouse, perfect for maintaining skin moisture and plumpness, even for eczema-prone skin.",
+      "function": "Hyaluronic Acid is a naturally occurring molecule in the skin that retains up to 1,000 times its weight in water, making it a key ingredient for deep hydration and improving skin elasticity. It helps smooth fine lines and maintain a healthy skin barrier.",
+      "usage": "Apply HA-based serums or moisturizers to damp skin to maximize hydration. It works well with other skincare products and can be used both morning and evening as part of your routine.",
+      "note": "Hyaluronic Acid is safe and non-irritating for most skin types, including sensitive or eczema-prone skin. However, in extremely dry conditions, it may draw moisture from deeper skin layers, so follow with an occlusive moisturizer to lock in hydration."
+    }
+  ]
+}
