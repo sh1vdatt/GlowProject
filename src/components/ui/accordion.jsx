@@ -1,4 +1,14 @@
-import { useState } from "react";
+import {
+  useState,
+  Children,
+  cloneElement,
+  isValidElement,
+  createContext,
+  useContext,
+} from "react";
+
+// Create a context to manage accordion state
+const AccordionContext = createContext(null);
 
 export function Accordion({
   children,
@@ -27,48 +37,32 @@ export function Accordion({
     });
   };
 
+  // Create context value to be passed down
+  const contextValue = { openItems, toggleItem };
+
   return (
-    <div className={className}>
-      {children && Array.isArray(children)
-        ? children.map((child) => {
-            if (child?.type?.name === "AccordionItem") {
-              return {
-                ...child,
-                props: {
-                  ...child.props,
-                  isOpen: openItems.has(child.props.value),
-                  onToggle: () => toggleItem(child.props.value),
-                },
-              };
-            }
-            return child;
-          })
-        : children}
-    </div>
+    <AccordionContext.Provider value={contextValue}>
+      <div className={className}>{children}</div>
+    </AccordionContext.Provider>
   );
 }
 
-export function AccordionItem({ children, value, isOpen, onToggle }) {
+export function AccordionItem({ children, value, className = "" }) {
+  const { openItems, toggleItem } = useContext(AccordionContext);
+  const isOpen = openItems?.has(value);
+
+  // Pass down isOpen and toggle function to children
   return (
-    <div className="border-b">
-      {children && Array.isArray(children)
-        ? children.map((child) => {
-            if (
-              child?.type?.name === "AccordionTrigger" ||
-              child?.type?.name === "AccordionContent"
-            ) {
-              return {
-                ...child,
-                props: {
-                  ...child.props,
-                  isOpen,
-                  onToggle,
-                },
-              };
-            }
-            return child;
-          })
-        : children}
+    <div className={`border-b ${className}`}>
+      {Children.map(children, (child) => {
+        if (!isValidElement(child)) return child;
+
+        // Pass props to children
+        return cloneElement(child, {
+          isOpen,
+          onToggle: () => toggleItem(value),
+        });
+      })}
     </div>
   );
 }
