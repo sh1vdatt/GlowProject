@@ -1,6 +1,10 @@
 import { useRef } from "react";
 import { ChevronRight } from "lucide-react";
 
+import blogImage1 from "../../assets/sections/blog/1.png";
+import blogImage2 from "../../assets/sections/blog/2.png";
+import blogImage3 from "../../assets/sections/blog/3.png";
+
 export function BlogSection() {
   const carouselRef = useRef(null);
 
@@ -26,17 +30,17 @@ export function BlogSection() {
           {[
             {
               title: "Future of Skincare",
-              img: "src/assets/sections/blog/2.png",
+              img: blogImage2,
               desc: "Predict future trends in skincare technology, particularly focusing on advancements in scanning and analysis tools like the one offered...",
             },
             {
               title: "Behind The Label",
-              img: "src/assets/sections/blog/1.png",
+              img: blogImage1,
               desc: "Explore how the ingredient scanner can help consumers understand complicated product labels and uncover the truth behind the ingredients...",
             },
             {
               title: "Myth vs Reality",
-              img: "src/assets/sections/blog/3.png",
+              img: blogImage3,
               desc: "Use the scanner to debunk popular skincare myths by providing scientific facts about ingredients commonly found in beauty products...",
             },
           ].map((blog, index) => (

@@ -1,3 +1,6 @@
+import React from "react";
+import ProfileIcon from "../../assets/sections/hero/Profile-icon.png";
+
 export function DiscoverSection() {
   return (
     <section className="py-24 px-4 relative">
@@ -13,7 +16,7 @@ export function DiscoverSection() {
             <div className="relative flex items-center">
               <div className="h-20 w-20 md:h-24 md:w-24 bg-white rounded-full flex items-center justify-center overflow-hidden z-10">
                 <img
-                  src="/src/assets/sections/hero/Profile-icon.png"
+                  src={ProfileIcon}
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
@@ -38,3 +41,5 @@ export function DiscoverSection() {
     </section>
   );
 }
+
+export default DiscoverSection;

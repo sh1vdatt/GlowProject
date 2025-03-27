@@ -1,3 +1,8 @@
+import React from "react";
+import Myth1Image from "../../assets/sections/myths/1.png";
+import Myth2Image from "../../assets/sections/myths/2.png";
+import Myth3Image from "../../assets/sections/myths/3.png";
+
 export function SkincareMythsSection() {
   return (
     <section className="py-16 px-4 md:px-6 lg:px-8 mt-5">
@@ -22,7 +27,7 @@ export function SkincareMythsSection() {
 
         <div className="rounded-3xl overflow-hidden">
           <img
-            src="src/assets/sections/myths/1.png"
+            src={Myth1Image}
             alt="Person applying sunscreen"
             className="w-full h-full object-cover"
           />
@@ -44,7 +49,7 @@ export function SkincareMythsSection() {
 
         <div className="rounded-3xl overflow-hidden">
           <img
-            src="src/assets/sections/myths/2.png"
+            src={Myth2Image}
             alt="Woman applying moisturizer"
             className="w-full h-full object-cover"
           />
@@ -65,7 +70,7 @@ export function SkincareMythsSection() {
 
         <div className="rounded-3xl overflow-hidden">
           <img
-            src="src/assets/sections/myths/3.png"
+            src={Myth3Image}
             alt="Woman with freckles"
             className="w-full h-full object-cover"
           />
@@ -93,7 +98,7 @@ export function SkincareMythsSection() {
         {/* First image */}
         <div className="rounded-3xl overflow-hidden">
           <img
-            src="src/assets/sections/myths/1.png"
+            src={Myth1Image}
             alt="Person applying sunscreen"
             className="w-full h-full object-cover"
           />
@@ -102,7 +107,7 @@ export function SkincareMythsSection() {
         {/* Second image */}
         <div className="rounded-3xl overflow-hidden">
           <img
-            src="src/assets/sections/myths/2.png"
+            src={Myth2Image}
             alt="Woman applying moisturizer"
             className="w-full h-full object-cover"
           />
@@ -144,7 +149,7 @@ export function SkincareMythsSection() {
         {/* Third image */}
         <div className="rounded-3xl overflow-hidden">
           <img
-            src="src/assets/sections/myths/3.png"
+            src={Myth3Image}
             alt="Woman with freckles"
             className="w-full h-full object-cover"
           />
@@ -153,3 +158,5 @@ export function SkincareMythsSection() {
     </section>
   );
 }
+
+export default SkincareMythsSection;

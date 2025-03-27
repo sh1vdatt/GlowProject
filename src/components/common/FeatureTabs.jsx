@@ -3,6 +3,18 @@
 import { useState } from "react";
 import { Clock, ShoppingCart, Microscope, Brain } from "lucide-react";
 
+// Image imports for Scanner features
+import ScannerFeature1 from "../../assets/sections/features/product scanner/1.png";
+import ScannerFeature2 from "../../assets/sections/features/product scanner/2.png";
+import ScannerFeature3 from "../../assets/sections/features/product scanner/3.png";
+import ScannerFeature4 from "../../assets/sections/features/product scanner/4.png";
+
+// Image imports for Analysis features
+import AnalysisFeature1 from "../../assets/sections/features/skin analysis/1.png";
+import AnalysisFeature2 from "../../assets/sections/features/skin analysis/2.png";
+import AnalysisFeature3 from "../../assets/sections/features/skin analysis/3.png";
+import AnalysisFeature4 from "../../assets/sections/features/skin analysis/4.png";
+
 export function FeatureTabs() {
   const [selectedTab, setSelectedTab] = useState("scanner");
   const [expandedCard, setExpandedCard] = useState(null);
@@ -18,7 +30,7 @@ export function FeatureTabs() {
       description: "Know exactly what you're applying to your skin and why.",
       color: "bg-pink-200",
       icon: Clock,
-      image: "src/assets/sections/features/product scanner/1.png",
+      image: ScannerFeature1,
     },
     {
       id: 2,
@@ -27,7 +39,7 @@ export function FeatureTabs() {
         "Analysis based on a database of over 1.5 million medical research studies and dermatology publications.",
       color: "bg-lime-200",
       icon: Microscope,
-      image: "src/assets/sections/features/product scanner/2.png",
+      image: ScannerFeature2,
     },
     {
       id: 3,
@@ -35,7 +47,7 @@ export function FeatureTabs() {
       description: "Get unbiased, research-backed information you can trust.",
       color: "bg-blue-200",
       icon: Brain,
-      image: "src/assets/sections/features/product scanner/3.png",
+      image: ScannerFeature3,
     },
     {
       id: 4,
@@ -44,7 +56,7 @@ export function FeatureTabs() {
         "Shop curated recommendations directly through our platform.",
       color: "bg-orange-200",
       icon: ShoppingCart,
-      image: "src/assets/sections/features/product scanner/4.png",
+      image: ScannerFeature4,
     },
   ];
 
@@ -56,7 +68,7 @@ export function FeatureTabs() {
         "Receive a detailed analysis of your unique skin characteristics and concerns.",
       color: "bg-purple-200",
       icon: Brain,
-      image: "src/assets/sections/features/skin analysis/1.png",
+      image: AnalysisFeature1,
     },
     {
       id: 2,
@@ -65,7 +77,7 @@ export function FeatureTabs() {
         "Our AI-powered analysis identifies underlying skin conditions often missed by the naked eye.",
       color: "bg-blue-200",
       icon: Microscope,
-      image: "src/assets/sections/features/skin analysis/2.png",
+      image: AnalysisFeature2,
     },
     {
       id: 3,
@@ -74,7 +86,7 @@ export function FeatureTabs() {
         "Get tailored skincare routines based on your specific skin needs and goals.",
       color: "bg-green-200",
       icon: Clock,
-      image: "src/assets/sections/features/skin analysis/3.png",
+      image: AnalysisFeature3,
     },
     {
       id: 4,
@@ -83,7 +95,7 @@ export function FeatureTabs() {
         "Monitor improvements and adjust your regimen as your skin evolves.",
       color: "bg-yellow-200",
       icon: ShoppingCart,
-      image: "src/assets/sections/features/skin analysis/4.png",
+      image: AnalysisFeature4,
     },
   ];
 

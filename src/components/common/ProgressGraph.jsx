@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GraphImage from "../../assets/sections/progress/graph.png";
 
 export function ProgressGraph() {
   const [view, setView] = useState("weekly");
@@ -23,7 +24,7 @@ export function ProgressGraph() {
         <div className="rounded-xl md:rounded-2xl lg:rounded-3xl p-4 sm:p-6 md:p-8 max-w-5xl mx-auto shadow-sm">
           <div className="relative w-full h-[200px] sm:h-[300px] md:h-[350px] lg:h-[400px]">
             <img
-              src="src/assets/sections/progress/graph.png"
+              src={GraphImage}
               alt="Skin health progress graph showing improvement over time"
               className="w-full h-full object-contain"
             />
@@ -33,3 +34,5 @@ export function ProgressGraph() {
     </section>
   );
 }
+
+export default ProgressGraph;

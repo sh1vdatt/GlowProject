@@ -5,6 +5,8 @@ import slide3A from "../../assets/sections/SkinAnalysisSlider/3SlideA.png";
 import slide3B from "../../assets/sections/SkinAnalysisSlider/3SlideB.png";
 import slide4A from "../../assets/sections/SkinAnalysisSlider/4SlideA.png";
 import slide4B from "../../assets/sections/SkinAnalysisSlider/4SlideB.png";
+import Slide1 from "../../assets/sections/SkinAnalysisSlider/1Slide.png";
+import Slide2 from "../../assets/sections/SkinAnalysisSlider/2Slide.png";
 
 function SliderNavigation({ activeSlide, totalSlides, onPrev, onNext }) {
   return (
@@ -45,7 +47,7 @@ export function SkinAnalysisSlider() {
       title: "1. Upload Your Photos or Take a Snap",
       content:
         "Beauty and Brains! Our AI, trained on over 75,000 images, uses its smarty-pants tech to analyze your skin with 99% accuracy.",
-      src: "src/assets/sections/SkinAnalysisSlider/1Slide.png",
+      src: Slide1,
       altText: "Phone showing photo upload interface",
     },
     {
@@ -53,7 +55,7 @@ export function SkinAnalysisSlider() {
       title: "1. Get Your Personalized Skin Analysis",
       content:
         "Our AI examines multiple aspects of your skin including texture, tone, spots, wrinkles, and more to provide a comprehensive analysis of your skin's current condition.",
-      src: "src/assets/sections/SkinAnalysisSlider/2Slide.png",
+      src: Slide2,
       altText: "Phone showing skin analysis results",
     },
     {
@@ -190,3 +192,5 @@ export function SkinAnalysisSlider() {
     </section>
   );
 }
+
+export default SkinAnalysisSlider;

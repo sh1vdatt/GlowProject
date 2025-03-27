@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
+import logoImage from "../../assets/sections/footer/Logo.png";
 
 export function Footer() {
   return (
@@ -7,11 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="text-3xl font-bold mb-4">
-              <img
-                src="src/assets/sections/footer/Logo.png"
-                alt="logo"
-                className="h-16"
-              />
+              <img src={logoImage} alt="logo" className="h-16" />
             </div>
           </div>
 

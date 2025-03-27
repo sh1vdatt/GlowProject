@@ -1,4 +1,14 @@
 import { useState, useRef, useEffect } from "react";
+import Image1 from "../../assets/sections/scanner/1.png";
+import Image2 from "../../assets/sections/scanner/2.png";
+import Image3 from "../../assets/sections/scanner/3.png";
+import Image4 from "../../assets/sections/scanner/4.png";
+import Image5 from "../../assets/sections/scanner/5.png";
+import Image6 from "../../assets/sections/scanner/6.png";
+import Image7 from "../../assets/sections/scanner/7.png";
+import Image8 from "../../assets/sections/scanner/8.png";
+import Image9 from "../../assets/sections/scanner/9.png";
+import ScanProductOverlay from "../../assets/sections/scanner/ScanProduct1.png";
 
 export function ProductCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -8,47 +18,47 @@ export function ProductCarousel() {
   const originalImages = [
     {
       id: 1,
-      src: "/src/assets/sections/scanner/1.png",
+      src: Image1,
       alt: "Skincare product image 1",
     },
     {
       id: 2,
-      src: "/src/assets/sections/scanner/2.png",
+      src: Image2,
       alt: "Skincare product image 2",
     },
     {
       id: 3,
-      src: "/src/assets/sections/scanner/3.png",
+      src: Image3,
       alt: "Skincare product image 3",
     },
     {
       id: 4,
-      src: "/src/assets/sections/scanner/4.png",
+      src: Image4,
       alt: "Skincare product image 4",
     },
     {
       id: 5,
-      src: "/src/assets/sections/scanner/5.png",
+      src: Image5,
       alt: "Skincare product image 5",
     },
     {
       id: 6,
-      src: "/src/assets/sections/scanner/6.png",
+      src: Image6,
       alt: "Skincare product image 6",
     },
     {
       id: 7,
-      src: "/src/assets/sections/scanner/7.png",
+      src: Image7,
       alt: "Skincare product image 7",
     },
     {
       id: 8,
-      src: "/src/assets/sections/scanner/8.png",
+      src: Image8,
       alt: "Skincare product image 8",
     },
     {
       id: 9,
-      src: "/src/assets/sections/scanner/9.png",
+      src: Image9,
       alt: "Skincare product image 9",
     },
   ];
@@ -117,7 +127,7 @@ export function ProductCarousel() {
 
             {hoverIndex === index && (
               <img
-                src="/src/assets/sections/scanner/ScanProduct1.png"
+                src={ScanProductOverlay}
                 alt="Scan overlay"
                 className="absolute inset-0 w-[110%] h-[110%] object-cover"
               />
@@ -128,3 +138,5 @@ export function ProductCarousel() {
     </div>
   );
 }
+
+export default ProductCarousel;
