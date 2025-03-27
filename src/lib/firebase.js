@@ -4,6 +4,13 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {};
+const firebaseConfig = {
+  apiKey: "AIzaSyAWXOrIkz0eo7vOpg6V9qfILocIoyBCNuc",
+  authDomain: "gloww-project.firebaseapp.com",
+  projectId: "gloww-project",
+  storageBucket: "gloww-project.firebasestorage.app",
+  messagingSenderId: "406101373120",
+  appId: "1:406101373120:web:c62c6439426b06a232bd25",
+};
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
