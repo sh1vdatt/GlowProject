@@ -37,7 +37,11 @@ const ProductAnalysisForm = ({
 
   const handleBack = () => {
     if (currentStep > 1) {
-      setCurrentStep(currentStep - 1);
+      if (currentStep === 4 && formData.hasAllergies === "no") {
+        setCurrentStep(2);
+      } else {
+        setCurrentStep(currentStep - 1);
+      }
     } else if (onBack) {
       onBack();
     }
@@ -45,7 +49,7 @@ const ProductAnalysisForm = ({
 
   const handleContinue = () => {
     if (currentStep < 6) {
-      if (currentStep === 2 && formData.hasAllergies === false) {
+      if (currentStep === 2 && formData.hasAllergies === "no") {
         setCurrentStep(4);
       } else {
         setCurrentStep(currentStep + 1);

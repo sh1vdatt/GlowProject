@@ -55,7 +55,11 @@ const SkinAnalysisForm = ({
 
   const handleBack = () => {
     if (currentStep > 1) {
-      setCurrentStep(currentStep - 1);
+      if (currentStep === 6 && formData.hasAllergies === "no") {
+        setCurrentStep(4);
+      } else {
+        setCurrentStep(currentStep - 1);
+      }
     } else if (onBack) {
       onBack();
     }
@@ -63,7 +67,7 @@ const SkinAnalysisForm = ({
 
   const handleContinue = () => {
     if (currentStep < 9) {
-      if (currentStep === 4 && formData.hasAllergies === false) {
+      if (currentStep === 4 && formData.hasAllergies === "no") {
         setCurrentStep(6); // Skip to skin conditions
       } else {
         setCurrentStep(currentStep + 1);

@@ -81,7 +81,7 @@ const SkinGoalsContent = ({ formData, updateFormData }) => {
             key={goal.id}
             className={`w-full p-4 rounded-xl border flex items-center transition-all duration-200 ${
               skinGoals.includes(goal.id)
-                ? "bg-gray-100 border-amber-400 shadow-sm"
+                ? "bg-gray-100 border-amber-300 shadow-sm"
                 : " border-gray-300 hover:bg-gray-50"
             }`}
             onClick={() => toggleGoal(goal.id)}
