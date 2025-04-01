@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ProductCarousel } from "../common/ProductCarousel";
@@ -15,6 +13,9 @@ import { BlogSection } from "./BlogSection";
 import { Footer } from "../layout/Footer";
 import { Logo } from "../common/Logo";
 import { DiscoverSection } from "./DiscoverSection";
+import { MdMenu } from "react-icons/md";
+import { FaGlobeAsia } from "react-icons/fa";
+import { MdOutlineDocumentScanner } from "react-icons/md";
 
 export function Home() {
   const navigate = useNavigate();
@@ -31,12 +32,15 @@ export function Home() {
           <div className="w-full flex justify-between items-center lg:hidden">
             <Logo />
             <div className="flex items-center gap-4">
-              <button className="text-2xl">☰</button> {/* Mobile Menu Icon */}
-              <button className="h-10 w-10 flex items-center justify-center">
-                🌐
+              <button className="text-2xl">
+                <MdMenu />
+              </button>{" "}
+              {/* Mobile Menu Icon */}
+              <button className="h-full w-full flex items-center justify-center">
+                <FaGlobeAsia />
               </button>
-              <button className="h-10 w-10 flex items-center justify-center border">
-                📄
+              <button className="h-full w-full flex items-center justify-center">
+                <MdOutlineDocumentScanner />
               </button>
             </div>
           </div>
@@ -61,7 +65,9 @@ export function Home() {
             {/* Right section */}
             <div className="flex items-center gap-4">
               <div className="h-10 w-10 rounded-full border flex items-center justify-center">
-                <span className="text-xl">🌐</span>
+                <button className="text-xl">
+                  <FaGlobeAsia />
+                </button>
               </div>
               <button
                 className="px-8 py-3 rounded-full bg-lime-200 text-base hover:bg-lime-300 transition-colors"
