@@ -1,4 +1,3 @@
-import React from "react";
 import mirror from "../../../../assets/signup/SkinAnalysis/mirror.png";
 import ClearSkin from "../../../../assets/signup/SkinAnalysis/ClearSkin.png";
 import Youthful from "../../../../assets/signup/SkinAnalysis/youthful.png";
@@ -66,7 +65,7 @@ const SkinGoalsContent = ({ formData, updateFormData }) => {
     <>
       <div className="flex items-start mb-4">
         <div className="flex items-center justify-center mr-4">
-          <img src={mirror} alt="Mirror Icon" />
+          <img src={mirror || "/placeholder.svg"} alt="Mirror Icon" />
         </div>
         <div>
           <h2 className="text-2xl font-semibold text-gray-800">
@@ -80,15 +79,15 @@ const SkinGoalsContent = ({ formData, updateFormData }) => {
         {skinGoalsOptions.map((goal) => (
           <button
             key={goal.id}
-            className={`w-full p-4 rounded-lg border border-gray-200 flex items-center ${
+            className={`w-full p-4 rounded-xl border flex items-center transition-all duration-200 ${
               skinGoals.includes(goal.id)
-                ? "bg-amber-50 border-amber-300"
-                : "border-gray-400"
+                ? "bg-gray-100 border-amber-400 shadow-sm"
+                : " border-gray-300 hover:bg-gray-50"
             }`}
             onClick={() => toggleGoal(goal.id)}
           >
             <img
-              src={goal.icon}
+              src={goal.icon || "/placeholder.svg"}
               alt={goal.title}
               className="w-10 h-10 object-contain"
             />
