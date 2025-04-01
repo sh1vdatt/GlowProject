@@ -39,6 +39,25 @@ const DisplayResultContent = ({ formData, updateFormData }) => {
     setSelectedMyths(selectRandomMyths());
   }, []);
 
+  // Auto-swipe functionality
+  useEffect(() => {
+    const autoSwipeInterval = setInterval(() => {
+      if (carouselRef.current && selectedMyths.length > 0) {
+        const nextIndex = (activeIndex + 1) % selectedMyths.length;
+        const cardWidth = carouselRef.current.clientWidth;
+
+        carouselRef.current.scrollTo({
+          left: nextIndex * cardWidth,
+          behavior: "smooth",
+        });
+
+        setActiveIndex(nextIndex);
+      }
+    }, 2500);
+
+    return () => clearInterval(autoSwipeInterval);
+  }, [activeIndex, selectedMyths.length]);
+
   const handleScroll = () => {
     if (carouselRef.current) {
       const scrollPosition = carouselRef.current.scrollLeft;
@@ -93,7 +112,11 @@ const DisplayResultContent = ({ formData, updateFormData }) => {
             ref={carouselRef}
             className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide w-full"
             onScroll={handleScroll}
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              scrollSnapType: "x mandatory",
+            }}
           >
             {selectedMyths.map((myth, index) => (
               <div
@@ -106,17 +129,17 @@ const DisplayResultContent = ({ formData, updateFormData }) => {
                   <div className="flex space-x-1.5 mb-2">
                     <div
                       className={`w-1.5 h-1.5 rounded-full ${
-                        index === 0 ? "bg-gray-800" : "bg-gray-400"
+                        activeIndex === 0 ? "bg-gray-800" : "bg-gray-400"
                       }`}
                     ></div>
                     <div
                       className={`w-1.5 h-1.5 rounded-full ${
-                        index === 1 ? "bg-gray-800" : "bg-gray-400"
+                        activeIndex === 1 ? "bg-gray-800" : "bg-gray-400"
                       }`}
                     ></div>
                     <div
                       className={`w-1.5 h-1.5 rounded-full ${
-                        index === 2 ? "bg-gray-800" : "bg-gray-400"
+                        activeIndex === 2 ? "bg-gray-800" : "bg-gray-400"
                       }`}
                     ></div>
                   </div>
