@@ -1,7 +1,9 @@
 import logoImage from "../../assets/sections/hero/Logo.png";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
   const userName = "Jane";
+  const location = useLocation();
 
   const getGreeting = () => {
     const now = new Date();
@@ -26,9 +28,11 @@ function Header() {
             className="h-10"
           />
         </div>
-        <button className="w-12 h-12 rounded-full bg-lime-200 flex items-center justify-center text-xl font-medium text-gray-800">
-          JC
-        </button>
+        <Link to="/user-profile" state={{ from: location.pathname }}>
+          <button className="w-12 h-12 rounded-full bg-lime-200 flex items-center justify-center text-xl font-medium text-gray-800">
+            JC
+          </button>
+        </Link>
       </div>
 
       <div className="bg-green-50 px-8 py-4 flex justify-between items-center">

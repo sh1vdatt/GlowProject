@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./styles/index.css";
 import { Home } from "./components/sections/Home";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -16,6 +15,7 @@ import ResultsPage from "./components/signup/product/skinAnalysis/result/SkinRes
 import ProductResultPage from "./components/signup/product/productAnalysis/result/ProductResult";
 import HomePageSkin from "./components/homepage/HomePageSkin";
 import HomePageProduct from "./components/homepage/HomePageProduct";
+import UserProfile from "./components/profile/UserProfile";
 
 function App() {
   return (
@@ -52,6 +52,7 @@ function App() {
         />
         <Route path="/dashboard-skin" element={<HomePageSkin />} />
         <Route path="/dashboard-product" element={<HomePageProduct />} />
+        <Route path="/user-profile" element={<UserProfile />} />
       </Routes>
     </BrowserRouter>
   );
