@@ -6,7 +6,7 @@ const MythBuster = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef(null);
 
-  // Select random myths on component mount
+  // Selecting random myths on component mount
   useEffect(() => {
     const selectRandomMyths = () => {
       if (!mythsData.myths || !Array.isArray(mythsData.myths)) {
@@ -25,7 +25,6 @@ const MythBuster = () => {
     setSelectedMyths(selectRandomMyths());
   }, []);
 
-  // Auto-swipe functionality
   useEffect(() => {
     const autoSwipeInterval = setInterval(() => {
       if (carouselRef.current && selectedMyths.length > 0) {
@@ -53,7 +52,6 @@ const MythBuster = () => {
     }
   };
 
-  // If no myths are loaded yet
   if (selectedMyths.length === 0) {
     return (
       <section className="bg-pink-100 rounded-xl mx-4 my-4 overflow-hidden mb-10">
@@ -88,7 +86,6 @@ const MythBuster = () => {
             </div>
           </div>
 
-          {/* Carousel */}
           <div
             ref={carouselRef}
             className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide w-full"

@@ -13,7 +13,7 @@ const HomePage = () => {
         <div className="flex-1 overflow-y-auto overflow-x-hidden pb-16">
           <Header />
           <SkinAnalysisOverview />
-          <SkinAnalysisActions />
+          <SkinAnalysisActions pageType="skin" />
           <SkincareAdvice />
           <MythBuster />
         </div>

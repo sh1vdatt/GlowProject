@@ -33,8 +33,8 @@ const BottomNavigation = () => {
   };
 
   return (
-    <nav className="bg-white border-t border-gray-300 py-4">
-      <div className="flex overflow-x-auto space-x-4 px-4">
+    <nav className="bg-black border-t border-gray-300 py-4">
+      <div className="flex overflow-x-auto scrollbar-hide space-x-4 px-4">
         {navItems.map((item) => (
           <button
             key={item.id}
