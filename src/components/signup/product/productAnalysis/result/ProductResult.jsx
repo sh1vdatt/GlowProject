@@ -11,6 +11,7 @@ import KeyIngredients from "./KeyIngredients";
 import PotentialIrritants from "./PotentialIrritants";
 import DetailCard from "./DetailCard";
 import ProductSuitability from "./ProductSuitability";
+import { Link } from "react-router-dom";
 
 const ProductResultPage = () => {
   const navigate = useNavigate();
@@ -156,13 +157,12 @@ const ProductResultPage = () => {
               Share result with friends
             </Button>
 
-            <Button
-              className="w-[249px] bg-lime-300 hover:bg-lime-400 text-gray-800 font-medium py-3 rounded-full mb-6 flex items-center justify-center"
-              onClick={() => navigate("/")}
-            >
-              <img src={BackHomeIcon} alt="Back" className="h-5 w-5 mr-2" />
-              Back to Home Screen
-            </Button>
+            <Link to="/dashboard-product">
+              <Button className="w-[249px] bg-lime-300 hover:bg-lime-400 text-gray-800 font-medium py-3 rounded-full mb-6 flex items-center justify-center">
+                <img src={BackHomeIcon} alt="Back" className="h-5 w-5 mr-2" />
+                Back to Home Screen
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
