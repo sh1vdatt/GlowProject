@@ -26,13 +26,12 @@ const SkinAnalysisActions = ({ pageType = "skin" }) => {
             }}
           ></div>
 
-          {/* Add scan image here */}
           <div
-            className="absolute inset-0 bg-center bg-no-repeat opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20"
+            className="absolute inset-0 bg-center bg-no-repeat opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-5"
             style={{
               backgroundImage: `url(${scan})`,
-              backgroundSize: "90%",
-              backgroundPosition: "center",
+              backgroundSize: "80%",
+              backgroundPosition: "center center",
             }}
           ></div>
 
@@ -40,7 +39,7 @@ const SkinAnalysisActions = ({ pageType = "skin" }) => {
             <h2 className="text-black text-xl font-semibold mb-4">
               Reveal the secrets of your skin
             </h2>
-            <Link to="/skin-analysis">
+            <Link to="/skin-area-selection">
               <button className="bg-yellow-300 text-gray-800 py-3 px-6 rounded-xl text-base hover:bg-yellow-400 transition-colors">
                 Get Your Skin Analysis
               </button>
@@ -77,7 +76,6 @@ const SkinAnalysisActions = ({ pageType = "skin" }) => {
         </div>
       )}
 
-      {/* Age Scanner Section - with conditional button text based on pageType */}
       <div
         className="relative bg-cover bg-center rounded-xl overflow-hidden group"
         style={{
