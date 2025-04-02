@@ -21,14 +21,12 @@ const UserProfile = () => {
   const [userData, setUserData] = useState(dummyUserData);
   const location = useLocation();
 
-  // Determine the back path based on where user came from
   const getBackPath = () => {
     // Check if location state has previous path
     if (location.state && location.state.from) {
       return location.state.from;
     }
 
-    // Default to skin dashboard if no state is available
     return "/dashboard-skin";
   };
 
@@ -45,14 +43,12 @@ const UserProfile = () => {
   //  write the code below for api call
 
   const handleForwardClick = () => {
-    // Function placeholder for forward navigation
     console.log("Forward button clicked");
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-white">
       <div className="w-full max-w-md bg-stone-100 flex flex-col min-h-screen mx-auto relative">
-        {/* Back button and title */}
         <div className="flex items-center p-4 relative">
           <Link to={getBackPath()}>
             <button className="p-1 absolute left-0">
@@ -62,7 +58,6 @@ const UserProfile = () => {
           <h1 className="text-center w-full text-lg font-medium">My Profile</h1>
         </div>
 
-        {/* Profile avatar and name */}
         <div className="flex flex-col items-center mt-4 mb-6">
           <div className="w-24 h-24 rounded-full bg-[#e8f87c] flex items-center justify-center mb-3">
             <span className="text-3xl font-bold text-gray-800">
@@ -74,7 +69,6 @@ const UserProfile = () => {
 
         <div className="border-t border-gray-200 mx-0 "></div>
 
-        {/* Profile menu items */}
         <div className="px-0">
           <div className="flex items-center justify-between py-4 px-5 border-b border-gray-200">
             <div className="flex items-center">

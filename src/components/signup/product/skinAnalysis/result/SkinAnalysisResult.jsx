@@ -3,8 +3,10 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
 import { IoInformationCircleOutline } from "react-icons/io5";
+import HowSkinAnalysed from "../HowSkinAnalysed";
 
 const SkinAnalysisResults = ({ resultData }) => {
+  const [showModal, setShowModal] = useState(false);
   const [currentResult] = useState(
     resultData?.results?.[0] || {
       overall_skin_score: 78,
@@ -30,8 +32,15 @@ const SkinAnalysisResults = ({ resultData }) => {
 
   const bellCurveData = generateBellCurveData(currentResult.comparison_score);
 
+  // Function to toggle the modal
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <div className="bg-yellow-50 rounded-lg p-2">
+      {showModal && <HowSkinAnalysed onClose={toggleModal} />}
+
       <h2 className="text-2xl font-bold mb-6">Facial Skin Analysis Result</h2>
 
       <div className="flex">
@@ -92,7 +101,7 @@ const SkinAnalysisResults = ({ resultData }) => {
                   ></div>
                 </div>
 
-                <div className="w-full  rounded-full h-2 overflow-hidden opacity-50">
+                <div className="w-full rounded-full h-2 overflow-hidden opacity-50">
                   <div
                     className="bg-gray-400 h-2 rounded-full"
                     style={{ width: "80%" }}
@@ -164,8 +173,12 @@ const SkinAnalysisResults = ({ resultData }) => {
       </div>
 
       <div className="mt-8 text-center">
-        <button className="text-gray-700 font-medium underline">
-          How do we analysis your skin?
+        {/* Updated button to open the modal */}
+        <button
+          className="text-gray-700 font-medium underline"
+          onClick={toggleModal}
+        >
+          How do we analyze your skin?
         </button>
       </div>
     </div>
