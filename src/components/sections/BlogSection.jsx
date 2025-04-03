@@ -52,6 +52,7 @@ export function BlogSection() {
                 <img
                   src={blog.img}
                   alt={blog.title}
+                  loading="lazy"
                   className="object-cover w-full h-full transition-transform group-hover:scale-105"
                 />
               </div>

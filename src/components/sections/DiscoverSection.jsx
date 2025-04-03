@@ -18,6 +18,7 @@ export function DiscoverSection() {
                 <img
                   src={ProfileIcon}
                   alt="Profile"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>

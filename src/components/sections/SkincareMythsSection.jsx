@@ -101,6 +101,7 @@ export function SkincareMythsSection() {
             src={Myth1Image}
             alt="Person applying sunscreen"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -110,6 +111,7 @@ export function SkincareMythsSection() {
             src={Myth2Image}
             alt="Woman applying moisturizer"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -151,7 +153,8 @@ export function SkincareMythsSection() {
           <img
             src={Myth3Image}
             alt="Woman with freckles"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            loading="lazy"
           />
         </div>
       </div>

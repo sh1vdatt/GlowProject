@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="text-3xl font-bold mb-4">
-              <img src={logoImage} alt="logo" className="h-16" />
+              <img src={logoImage} alt="logo" className="h-16" loading="lazy" />
             </div>
           </div>
 
