@@ -58,6 +58,7 @@ const SkincareAdvice = () => {
                 src={item.icon || "/placeholder.svg"}
                 alt={item.title}
                 className="w-10 h-10"
+                loading="lazy"
               />
             </div>
           ))}
@@ -77,6 +78,7 @@ const SkincareAdvice = () => {
                   src={item.icon || "/placeholder.svg"}
                   alt={item.title}
                   className="w-full h-full"
+                  loading="lazy"
                 />
               </div>
               <div>

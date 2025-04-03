@@ -26,6 +26,7 @@ function Header() {
             src={logoImage || "/placeholder.svg"}
             alt="glow project"
             className="h-10"
+            loading="lazy"
           />
         </div>
         <Link to="/user-profile" state={{ from: location.pathname }}>
