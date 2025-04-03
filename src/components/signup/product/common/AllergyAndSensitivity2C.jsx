@@ -49,7 +49,7 @@ const SkinConditionsContent = ({ formData, updateFormData }) => {
       <div className="mb-8">
         <div className="flex items-start gap-4">
           <div className="flex items-center justify-center mr-4">
-            <img src={skincondition} alt="Skin Condition Icon" />
+            <img src={skincondition} alt="Skin Condition Icon" loading="lazy" />
           </div>
           <h2 className="text-xl font-medium text-gray-800">
             Do you have any skin conditions or sensitivities we should be aware

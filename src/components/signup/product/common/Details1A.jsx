@@ -33,7 +33,7 @@ const UserProfileContent = ({ formData, updateFormData }) => {
     <div className="flex-1">
       <div className="flex items-start mb-4">
         <div className="flex items-center justify-center mr-4">
-          <img src={UserIcon} alt="User Icon" />
+          <img src={UserIcon} alt="User Icon" loading="lazy" />
         </div>
         <div>
           <h2 className="text-2xl font-semibold mb-1">

@@ -17,7 +17,7 @@ const SkinTypeContent = ({ formData, updateFormData }) => {
     <>
       <div className="flex items-start mb-4">
         <div className="flex items-center justify-center mr-4">
-          <img src={SkinType} alt="User Icon" />
+          <img src={SkinType} alt="Skin type Icon" loading="lazy" />
         </div>
         <div>
           <h2 className="text-2xl font-semibold mb-1 mt-4">

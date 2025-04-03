@@ -65,7 +65,11 @@ const SkinGoalsContent = ({ formData, updateFormData }) => {
     <>
       <div className="flex items-start mb-4">
         <div className="flex items-center justify-center mr-4">
-          <img src={mirror || "/placeholder.svg"} alt="Mirror Icon" />
+          <img
+            src={mirror || "/placeholder.svg"}
+            alt="Mirror Icon"
+            loading="lazy"
+          />
         </div>
         <div>
           <h2 className="text-2xl font-semibold text-gray-800">
@@ -90,6 +94,7 @@ const SkinGoalsContent = ({ formData, updateFormData }) => {
               src={goal.icon || "/placeholder.svg"}
               alt={goal.title}
               className="w-10 h-10 object-contain"
+              loading="lazy"
             />
             <div className="ml-3 text-left">
               <h3 className="font-medium text-gray-800">{goal.title}</h3>

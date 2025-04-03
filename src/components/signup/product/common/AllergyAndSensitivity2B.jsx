@@ -43,7 +43,7 @@ const AllergiesSelectionContent = ({ formData, updateFormData }) => {
       <div className="mb-8">
         <div className="flex items-start gap-4">
           <div className="flex items-center justify-center mr-4">
-            <img src={Allergies} alt="Allergies Icon" />
+            <img src={Allergies} alt="Allergies Icon" loading="lazy" />
           </div>
           <h2 className="text-xl font-medium text-gray-800">
             Are you allergic to any of these common skincare ingredients?

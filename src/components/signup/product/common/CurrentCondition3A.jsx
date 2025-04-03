@@ -19,7 +19,7 @@ const PrescribedSkincareContent = ({ formData, updateFormData }) => {
       <div className="mb-8">
         <div className="flex items-start gap-4">
           <div className="flex items-center justify-center mr-4">
-            <img src={prescribtion} alt="Skin Condition Icon" />
+            <img src={prescribtion} alt="Skin Condition Icon" loading="lazy" />
           </div>
           <h2 className="text-xl font-medium text-gray-800">
             Are you currently using any prescribed or medicated skincare
