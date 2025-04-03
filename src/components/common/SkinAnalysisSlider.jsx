@@ -127,6 +127,7 @@ export function SkinAnalysisSlider() {
                 src={currentSlide.src}
                 alt={currentSlide.altText}
                 className="object-cover w-full h-full rounded-[32px]"
+                loading="lazy"
               />
 
               <AnimatePresence>
@@ -137,6 +138,7 @@ export function SkinAnalysisSlider() {
                       src={overlay.src}
                       alt={overlay.alt}
                       className={overlay.imageClassName}
+                      loading="lazy"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}

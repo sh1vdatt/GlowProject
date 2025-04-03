@@ -26,6 +26,7 @@ export function ProgressGraph() {
             <img
               src={GraphImage}
               alt="Skin health progress graph showing improvement over time"
+              loading="lazy"
               className="w-full h-full object-contain"
             />
           </div>

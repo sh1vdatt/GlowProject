@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Clock, ShoppingCart, Microscope, Brain } from "lucide-react";
 
 // Image imports for Scanner features
@@ -26,6 +26,8 @@ const noScrollbarStyles = `
 export function FeatureTabs() {
   const [selectedTab, setSelectedTab] = useState("scanner");
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [visibleCards, setVisibleCards] = useState([]);
+  const cardsRef = useRef(null);
 
   const scannerFeatures = [
     {
@@ -106,6 +108,40 @@ export function FeatureTabs() {
   const features =
     selectedTab === "scanner" ? scannerFeatures : analysisFeatures;
 
+  // Set up intersection observer for lazy loading
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "100px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const cardId = parseInt(entry.target.dataset.id);
+          setVisibleCards((prev) => [...prev, cardId]);
+        }
+      });
+    }, options);
+
+    if (cardsRef.current) {
+      const cardElements = cardsRef.current.querySelectorAll(".feature-card");
+      cardElements.forEach((card) => {
+        observer.observe(card);
+      });
+    }
+
+    return () => {
+      if (cardsRef.current) {
+        const cardElements = cardsRef.current.querySelectorAll(".feature-card");
+        cardElements.forEach((card) => {
+          observer.unobserve(card);
+        });
+      }
+    };
+  }, [selectedTab]);
+
   return (
     <>
       <style jsx>{noScrollbarStyles}</style>
@@ -155,13 +191,15 @@ export function FeatureTabs() {
               : "Our platform analyzes your unique skin profile and educates you on the scientific effects of each ingredient, ensuring you achieve your skincare goals with precision and understanding."}
           </p>
           <div
+            ref={cardsRef}
             className="overflow-x-auto flex gap-4 lg:grid lg:grid-cols-4 lg:gap-6 scroll-smooth snap-x snap-mandatory scrollbar-none no-scrollbar"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {features.map((feature) => (
               <div
                 key={feature.id}
-                className={`${feature.color} rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer flex-shrink-0 w-64 snap-center md:w-1/2 lg:w-auto`}
+                data-id={feature.id}
+                className={`${feature.color} rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer flex-shrink-0 w-64 snap-center md:w-1/2 lg:w-auto feature-card`}
                 onMouseEnter={() => setHoveredCard(feature.id)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{ display: "flex", flexDirection: "column" }}
@@ -177,11 +215,14 @@ export function FeatureTabs() {
                 </div>
 
                 <div className="relative w-full pt-[75%] overflow-hidden mt-auto">
-                  <img
-                    src={feature.image || "/placeholder.svg"}
-                    alt={feature.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                  {visibleCards.includes(feature.id) && (
+                    <img
+                      src={feature.image || "/placeholder.svg"}
+                      alt={feature.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
                 </div>
 
                 <div

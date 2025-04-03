@@ -14,6 +14,9 @@ export function ProductCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef(null);
   const [hoverIndex, setHoverIndex] = useState(null);
+  const [visibleRange, setVisibleRange] = useState({ start: 0, end: 10 });
+  const observerRef = useRef(null);
+  const itemRefs = useRef({});
 
   const originalImages = [
     {
@@ -70,6 +73,14 @@ export function ProductCarousel() {
     ...originalImages,
   ];
 
+  // Update visible range based on activeIndex
+  useEffect(() => {
+    const start = Math.max(0, Math.floor(activeIndex) - 3);
+    const end = Math.min(productImages.length - 1, Math.ceil(activeIndex) + 8);
+    setVisibleRange({ start, end });
+  }, [activeIndex, productImages.length]);
+
+  // Animation loop for carousel
   useEffect(() => {
     let animationFrameId;
     let startTime;
@@ -101,6 +112,53 @@ export function ProductCarousel() {
     };
   }, [originalImages.length]);
 
+  // Setup Intersection Observer for lazy loading
+  useEffect(() => {
+    if ("IntersectionObserver" in window) {
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const imgElement = entry.target.querySelector("img");
+              if (imgElement && imgElement.dataset.src) {
+                imgElement.src = imgElement.dataset.src;
+                imgElement.removeAttribute("data-src");
+              }
+              observerRef.current.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "200px",
+          threshold: 0.1,
+        }
+      );
+
+      return () => {
+        if (observerRef.current) {
+          observerRef.current.disconnect();
+        }
+      };
+    }
+  }, []);
+
+  // Observe newly visible items
+  useEffect(() => {
+    if (observerRef.current) {
+      Object.values(itemRefs.current).forEach((ref) => {
+        if (ref) {
+          observerRef.current.observe(ref);
+        }
+      });
+    }
+  }, [visibleRange]);
+
+  // Function to check if image should load eagerly (for initially visible images)
+  const shouldLoadEagerly = (index) => {
+    return index >= visibleRange.start - 2 && index <= visibleRange.start + 5;
+  };
+
   return (
     <div className="relative overflow-hidden py-8" ref={carouselRef}>
       <div
@@ -110,30 +168,43 @@ export function ProductCarousel() {
           transition: "transform 0ms linear",
         }}
       >
-        {productImages.map((image, index) => (
-          <div
-            key={`${image.id}-${index}`}
-            className="relative flex-shrink-0 w-[250px] aspect-square rounded-3xl overflow-hidden bg-white shadow-sm transition-all duration-300 group"
-            onMouseEnter={() => setHoverIndex(index)}
-            onMouseLeave={() => setHoverIndex(null)}
-          >
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-full object-cover"
-              loading="eager"
-              decoding="sync"
-            />
+        {productImages.map((image, index) => {
+          const isInVisibleRange =
+            index >= visibleRange.start && index <= visibleRange.end;
+          const loadEagerly = shouldLoadEagerly(index);
 
-            {hoverIndex === index && (
+          return isInVisibleRange ? (
+            <div
+              key={`${image.id}-${index}`}
+              className="relative flex-shrink-0 w-[250px] aspect-square rounded-3xl overflow-hidden bg-white shadow-sm transition-all duration-300 group"
+              onMouseEnter={() => setHoverIndex(index)}
+              onMouseLeave={() => setHoverIndex(null)}
+              ref={(el) => (itemRefs.current[index] = el)}
+            >
               <img
-                src={ScanProductOverlay}
-                alt="Scan overlay"
-                className="absolute inset-0 w-[110%] h-[110%] object-cover"
+                src={loadEagerly ? image.src : undefined}
+                data-src={!loadEagerly ? image.src : undefined}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+                loading={loadEagerly ? "eager" : "lazy"}
+                decoding={loadEagerly ? "sync" : "async"}
               />
-            )}
-          </div>
-        ))}
+
+              {hoverIndex === index && (
+                <img
+                  src={ScanProductOverlay}
+                  alt="Scan overlay"
+                  className="absolute inset-0 w-[110%] h-[110%] object-cover"
+                />
+              )}
+            </div>
+          ) : (
+            <div
+              key={`${image.id}-${index}`}
+              className="relative flex-shrink-0 w-[250px] aspect-square rounded-3xl overflow-hidden bg-white shadow-sm transition-all duration-300 group"
+            />
+          );
+        })}
       </div>
     </div>
   );
