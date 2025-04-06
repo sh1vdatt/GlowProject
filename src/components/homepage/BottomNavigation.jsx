@@ -25,7 +25,12 @@ const BottomNavigation = () => {
     { id: 3, name: "Scanner", icon: HiCamera, path: "/scan-product" },
     { id: 4, name: "Age Scanner", icon: HiUser, path: "/upload-image" },
     { id: 5, name: "Treatment", icon: HiDocumentText, path: "/" },
-    { id: 6, name: "My Ingredients", icon: HiListBullet, path: "/" },
+    {
+      id: 6,
+      name: "My Ingredients",
+      icon: HiListBullet,
+      path: "/my-ingredients",
+    },
   ];
 
   const handleNavigation = (path) => {

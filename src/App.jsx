@@ -16,7 +16,7 @@ import ProductResultPage from "./components/signup/product/productAnalysis/resul
 import HomePageSkin from "./components/homepage/HomePageSkin";
 import HomePageProduct from "./components/homepage/HomePageProduct";
 import UserProfile from "./components/profile/UserProfile";
-
+import MyIngredients from "./components/ingredients/MyIngredients";
 function App() {
   return (
     <BrowserRouter>
@@ -50,9 +50,11 @@ function App() {
           path="/product-analysis-result"
           element={<ProductResultPage />}
         />
+        <Route path="/dashboard" element={<Navigate to="/dashboard-skin" />} />
         <Route path="/dashboard-skin" element={<HomePageSkin />} />
         <Route path="/dashboard-product" element={<HomePageProduct />} />
         <Route path="/user-profile" element={<UserProfile />} />
+        <Route path="/my-ingredients" element={<MyIngredients />} />
       </Routes>
     </BrowserRouter>
   );
