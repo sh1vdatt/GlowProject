@@ -11,11 +11,6 @@ import {
   BatteryLow,
   BatteryMedium,
   BatteryFull,
-  User,
-  UserRoundX,
-  UserRoundCheck,
-  UserRoundPlus,
-  UserRoundCog,
 } from "lucide-react";
 
 export default function BasicCheckIn() {
