@@ -48,7 +48,6 @@ const DailyTrackerHome = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Get time-sensitive greeting
   const getGreeting = () => {
     const hours = currentTime.getHours();
 
@@ -61,7 +60,6 @@ const DailyTrackerHome = () => {
     }
   };
 
-  // Get time-sensitive check-in text
   const getCheckInText = () => {
     const hours = currentTime.getHours();
 
@@ -74,7 +72,6 @@ const DailyTrackerHome = () => {
     }
   };
 
-  // Render status icon based on tracking status
   const renderStatusIcon = (status) => {
     switch (status) {
       case "complete":
@@ -98,14 +95,11 @@ const DailyTrackerHome = () => {
         <div className="flex-1 overflow-y-auto overflow-x-hidden pb-16">
           <Header />
 
-          {/* Main Content */}
           <div className="px-4 py-6">
-            {/* Greeting */}
             <h1 className="text-2xl font-bold text-center mb-6">
               {getGreeting()} Jane!
             </h1>
 
-            {/* Check-in prompt */}
             <div className="flex justify-between items-center mb-6">
               <p className="text-lg">How's your skin feeling?</p>
               <button className="border border-gray-400 rounded-xl py-2 px-4">
@@ -113,7 +107,6 @@ const DailyTrackerHome = () => {
               </button>
             </div>
 
-            {/* Calendar section */}
             <div className="mb-6">
               <div className="flex justify-between mb-2">
                 <span className="text-gray-700">
@@ -122,7 +115,6 @@ const DailyTrackerHome = () => {
                 <span className="text-gray-700">Today</span>
               </div>
 
-              {/* Date numbers */}
               <div className="flex justify-between mb-1">
                 {trackingData.dates.map((date) => (
                   <div key={date.day} className="text-center w-8">
@@ -137,7 +129,6 @@ const DailyTrackerHome = () => {
                 ))}
               </div>
 
-              {/* Status circles */}
               <div className="flex justify-between mb-4">
                 {trackingData.dates.map((date) => (
                   <div
@@ -152,7 +143,6 @@ const DailyTrackerHome = () => {
 
             <hr className="border-gray-300 mb-4" />
 
-            {/* Last tracking section */}
             <div className="flex justify-between items-center mb-4">
               <span className="text-gray-700">
                 Last Tracking | {trackingData.lastTracking}
@@ -160,9 +150,7 @@ const DailyTrackerHome = () => {
               <button className="text-gray-700 underline">View Summary</button>
             </div>
 
-            {/* Health score cards */}
             <div className="grid grid-cols-2 gap-4">
-              {/* Skin health card */}
               <div className="border border-gray-300 rounded-xl p-4">
                 <h3 className="text-lg font-medium mb-2">Skin health</h3>
                 <div className="flex items-center mb-2">
@@ -181,7 +169,6 @@ const DailyTrackerHome = () => {
                 </p>
               </div>
 
-              {/* Vitality card */}
               <div className="border border-gray-300 rounded-xl p-4">
                 <h3 className="text-lg font-medium mb-2">Vitality</h3>
                 <div className="flex items-center mb-2">
@@ -203,7 +190,6 @@ const DailyTrackerHome = () => {
           </div>
         </div>
 
-        {/* Bottom Navigation */}
         <div className="absolute bottom-0 left-0 right-0">
           <BottomNavigation />
         </div>
