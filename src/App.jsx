@@ -20,6 +20,10 @@ import MyIngredients from "./components/ingredients/MyIngredients";
 import TrackingPageFree from "./components/treatments/TrackingPageFree";
 import TrackingPagePaid from "./components/treatments/TrackingPagePaid";
 import DailyTrackerHome from "./components/treatments/DailyTrackerHome";
+import Page1 from "./components/check-in/advance/Page1";
+import Page2 from "./components/check-in/advance/Page2";
+import Page3 from "./components/check-in/advance/Page3";
+import BasicCheckIn from "./components/check-in/freee/BasicCheckIn";
 function App() {
   return (
     <BrowserRouter>
@@ -61,6 +65,10 @@ function App() {
         <Route path="/tracking-free" element={<TrackingPageFree />} />
         <Route path="/tracking-paid" element={<TrackingPagePaid />} />
         <Route path="/daily-tracker" element={<DailyTrackerHome />} />
+        <Route path="/check-in" element={<Page1 />} />
+        <Route path="/check-in-2" element={<Page2 />} />
+        <Route path="/check-in-3" element={<Page3 />} />
+        <Route path="/check-in-basic" element={<BasicCheckIn />} />
       </Routes>
     </BrowserRouter>
   );
