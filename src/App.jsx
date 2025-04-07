@@ -17,6 +17,9 @@ import HomePageSkin from "./components/homepage/HomePageSkin";
 import HomePageProduct from "./components/homepage/HomePageProduct";
 import UserProfile from "./components/profile/UserProfile";
 import MyIngredients from "./components/ingredients/MyIngredients";
+import TrackingPageFree from "./components/treatments/TrackingPageFree";
+import TrackingPagePaid from "./components/treatments/TrackingPagePaid";
+import DailyTrackerHome from "./components/treatments/DailyTrackerHome";
 function App() {
   return (
     <BrowserRouter>
@@ -55,6 +58,9 @@ function App() {
         <Route path="/dashboard-product" element={<HomePageProduct />} />
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/my-ingredients" element={<MyIngredients />} />
+        <Route path="/tracking-free" element={<TrackingPageFree />} />
+        <Route path="/tracking-paid" element={<TrackingPagePaid />} />
+        <Route path="/daily-tracker" element={<DailyTrackerHome />} />
       </Routes>
     </BrowserRouter>
   );
