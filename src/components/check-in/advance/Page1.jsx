@@ -239,7 +239,7 @@ export default function CheckIn() {
               </div>
             )}
 
-            {/* Sleep Question - Only show if energy is selected */}
+            {/* Sleep Question  */}
             {showSleepQuestion && (
               <div className="mb-6">
                 <h2 className="text-base font-medium mb-4">
@@ -258,7 +258,7 @@ export default function CheckIn() {
               </div>
             )}
 
-            {/* Factor Question - Only show if sleep is selected */}
+            {/* Factor Question  */}
             {showFactorQuestion && (
               <div className="mb-6 relative">
                 <h2 className="text-base font-medium mb-4">

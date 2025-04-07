@@ -199,7 +199,7 @@ export default function SkinCheckIn() {
               </div>
             </div>
 
-            {/* Concerns Question - Only show if skinFeel is selected */}
+            {/* Concerns Question  */}
             {showConcernsQuestion && (
               <div className="mb-6">
                 <h2 className="text-base font-medium mb-1">
@@ -222,7 +222,7 @@ export default function SkinCheckIn() {
               </div>
             )}
 
-            {/* Texture Question - Only show if concerns are selected */}
+            {/* Texture Question */}
             {showTextureQuestion && (
               <div className="mb-6">
                 <h2 className="text-base font-medium mb-4">
@@ -243,7 +243,7 @@ export default function SkinCheckIn() {
               </div>
             )}
 
-            {/* Appearance Question - Only show if texture is selected */}
+            {/* Appearance Question */}
             {showAppearanceQuestion && (
               <div className="mb-6">
                 <h2 className="text-base font-medium mb-4">
@@ -276,7 +276,7 @@ export default function SkinCheckIn() {
               </div>
             )}
 
-            {/* Sensitivity Question - Only show if appearance is selected */}
+            {/* Sensitivity Question  */}
             {showSensitivityQuestion && (
               <div className="mb-6">
                 <h2 className="text-base font-medium mb-4">

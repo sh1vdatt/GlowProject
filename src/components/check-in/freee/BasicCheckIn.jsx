@@ -267,7 +267,7 @@ export default function BasicCheckIn() {
               </div>
             </div>
 
-            {/* Energy Level Question - Only show if mood is selected */}
+            {/* Energy Level Question */}
             {showEnergyQuestion && (
               <div className="mb-6">
                 <h2 className="text-base font-medium mb-4">
@@ -286,7 +286,7 @@ export default function BasicCheckIn() {
               </div>
             )}
 
-            {/* Affect Factor Question - Only show if energy level is selected */}
+            {/* Affect Factor Question */}
             {showAffectFactorQuestion && (
               <div className="mb-6 relative">
                 <h2 className="text-base font-medium mb-4">
@@ -327,7 +327,7 @@ export default function BasicCheckIn() {
               </div>
             )}
 
-            {/* Skin Feel Question - Only show if affect factor is selected */}
+            {/* Skin Feel Question */}
             {showSkinFeelQuestion && (
               <div className="mb-6">
                 <h2 className="text-base font-medium mb-4">
@@ -358,7 +358,7 @@ export default function BasicCheckIn() {
               </div>
             )}
 
-            {/* Concerns Question - Only show if skin feel is selected */}
+            {/* Concerns Question  */}
             {showConcernsQuestion && (
               <div className="mb-6">
                 <h2 className="text-base font-medium mb-1">
