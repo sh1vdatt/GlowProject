@@ -16,6 +16,9 @@ import ProductResultPage from "./components/signup/product/productAnalysis/resul
 import HomePageSkin from "./components/homepage/HomePageSkin";
 import HomePageProduct from "./components/homepage/HomePageProduct";
 import UserProfile from "./components/profile/UserProfile";
+import MyAccount from "./components/profile/MyAccount";
+import ComprehensiveLevel from "./components/profile/ComprehensiveLevel";
+import HealthReport from "./components/profile/HealthReport";
 import MyIngredients from "./components/ingredients/MyIngredients";
 import TrackingPageFree from "./components/treatments/TrackingPageFree";
 import TrackingPagePaid from "./components/treatments/TrackingPagePaid";
@@ -61,7 +64,10 @@ function App() {
         <Route path="/dashboard-skin" element={<HomePageSkin />} />
         <Route path="/dashboard-product" element={<HomePageProduct />} />
         <Route path="/user-profile" element={<UserProfile />} />
+        <Route path="/my-account" element={<MyAccount />} />
+        <Route path="/comprehensive-level" element={<ComprehensiveLevel />} />
         <Route path="/my-ingredients" element={<MyIngredients />} />
+        <Route path="/health-report" element={<HealthReport />} />
         <Route path="/tracking-free" element={<TrackingPageFree />} />
         <Route path="/tracking-paid" element={<TrackingPagePaid />} />
         <Route path="/daily-tracker" element={<DailyTrackerHome />} />

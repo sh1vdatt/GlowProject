@@ -50,12 +50,10 @@ const UserProfile = () => {
     <div className="flex justify-center items-center min-h-screen bg-white">
       <div className="w-full max-w-md bg-stone-100 flex flex-col min-h-screen mx-auto relative">
         <div className="flex items-center p-4 relative">
-          <Link to={getBackPath()}>
-            <button className="p-1 absolute left-0">
-              <IoIosArrowBack size={24} className="text-gray-800" />
-            </button>
+          <Link to={getBackPath()} className="absolute left-4">
+            <IoIosArrowBack size={24} className="text-gray-800" />
           </Link>
-          <h1 className="text-center w-full text-lg font-medium">My Profile</h1>
+          <h1 className="text-lg font-medium w-full text-center">My Profile</h1>
         </div>
 
         <div className="flex flex-col items-center mt-4 mb-6">
@@ -75,9 +73,11 @@ const UserProfile = () => {
               <CgProfile size={24} className="mr-3 text-gray-600" />
               <span className="font-normal text-gray-800">My Account</span>
             </div>
-            <button onClick={handleForwardClick}>
-              <IoIosArrowForward size={20} className="text-gray-400" />
-            </button>
+            <Link to="/my-account">
+              <button>
+                <IoIosArrowForward size={20} className="text-gray-400" />
+              </button>
+            </Link>
           </div>
 
           <div className="flex items-center justify-between py-4 px-5 border-b border-gray-200">
@@ -94,9 +94,11 @@ const UserProfile = () => {
                   {userData.comprehensiveLevel}%
                 </span>
               </span>
-              <button onClick={handleForwardClick}>
-                <IoIosArrowForward size={20} className="text-gray-400" />
-              </button>
+              <Link to="/comprehensive-level">
+                <button onClick={handleForwardClick}>
+                  <IoIosArrowForward size={20} className="text-gray-400" />
+                </button>
+              </Link>
             </div>
           </div>
 
