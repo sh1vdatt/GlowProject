@@ -82,7 +82,7 @@ export function Footer() {
               </a>
             </div>
             <div className="text-gray-600 mb-4 md:mb-0">
-              © 2025 Project Glow. All rights reserved.
+              © Made by sh1vdatt.
             </div>
             <div className="flex gap-6 justify-center md:justify-end">
               <a
